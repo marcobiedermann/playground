@@ -1,0 +1,36 @@
+/* modules/register.css */
+
+.register {
+  box-shadow: 0 0 250px #000;
+  text-align: center;
+  padding: 4rem 2rem;
+}
+
+.register input {
+  border: 1px solid #242c37;
+  border-radius: 999px;
+  background-color: transparent;
+  text-align: center;
+}
+
+.register input[type='email'],
+.register input[type='password'] {
+  background-repeat: no-repeat;
+  background-size: 1.5rem;
+  background-position: 1rem 50%;
+}
+
+.register input[type='email'] {
+  background-image: url('../images/envelope.svg');
+}
+
+.register input[type='password'] {
+  background-image: url('../images/lock.svg');
+}
+
+.register input[type='submit'] {
+  background-image: linear-gradient(160deg, #8ceabb 0%, #378f7b 100%);
+  color: #fff;
+  margin-bottom: 6rem;
+  width: 100%;
+}

@@ -1,0 +1,28 @@
+/* modules/form.css */
+
+:root {
+  --placeholderColor: #7e8ba3;
+}
+
+input {
+  border: 0;
+  font: inherit;
+}
+
+::placeholder {
+  color: var(--placeholderColor);
+}
+
+.form__field {
+  margin-bottom: 1rem;
+}
+
+.form input {
+  outline: 0;
+  padding: .5rem 1rem;
+}
+
+.form input[type='email'],
+.form input[type='password'] {
+  width: 100%;
+}

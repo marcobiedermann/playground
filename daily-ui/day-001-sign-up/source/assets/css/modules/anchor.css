@@ -1,0 +1,9 @@
+/* modules/anchor.css */
+
+:root {
+  --linkColor: #7e8ba3;
+}
+
+a {
+  color: var(--linkColor);
+}

@@ -1,0 +1,12 @@
+/* modules/grid.css */
+
+:root {
+  --gridMaxWidth: 25rem;
+  --gridWidth: 100%;
+}
+
+.grid {
+  margin: 0 auto;
+  max-width: var(--gridMaxWidth);
+  width: var(--gridWidth);
+}

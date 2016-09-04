@@ -1,0 +1,7 @@
+/* modules/image.css */
+
+svg {
+  height: auto;
+  max-width: 100%;
+  vertical-align: middle;
+}
