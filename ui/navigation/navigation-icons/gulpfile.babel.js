@@ -1,0 +1,95 @@
+import gulp           from 'gulp';
+import gulpBrowserify from 'gulp-browserify';
+import gulpCleanCss   from 'gulp-clean-css';
+import gulpHtmlmin    from 'gulp-htmlmin';
+import gulpPostcss    from 'gulp-postcss';
+import gulpSourcemaps from 'gulp-sourcemaps';
+import gulpSvgmin     from 'gulp-svgmin';
+import gulpSvgstore   from 'gulp-svgstore';
+import gulpUglify     from 'gulp-uglify';
+import postcssCssnext from 'postcss-cssnext';
+import postcssImport  from 'postcss-import';
+
+const dirs = {
+  source: './source',
+  dest  : './dist'
+};
+
+gulp.task('css', () => {
+  return gulp.src(`${dirs.source}/assets/css/style.css`)
+    .pipe(gulpSourcemaps.init())
+    .pipe(gulpPostcss([
+      postcssImport(),
+      postcssCssnext({
+        features: {
+          rem: false
+        }
+      })
+    ]))
+    .pipe(gulpCleanCss())
+    .pipe(gulpSourcemaps.write('.'))
+    .pipe(gulp.dest(`${dirs.dest}/assets/css`));
+});
+
+gulp.task('html', () => {
+  return gulp.src(`${dirs.source}/**/*.html`)
+    .pipe(gulpHtmlmin({
+      caseSensitive                : true,
+      collapseBooleanAttributes    : true,
+      collapseWhitespace           : true,
+      minifyCSS                    : true,
+      minifyJS                     : true,
+      minifyURLs                   : true,
+      removeAttributeQuotes        : true,
+      removeCDATASectionsFromCDATA : true,
+      removeComments               : true,
+      removeCommentsFromCDATA      : true,
+      removeEmptyAttributes        : true,
+      removeOptionalTags           : true,
+      removeRedundantAttributes    : true,
+      removeScriptTypeAttributes   : true,
+      removeStyleLinkTypeAttributes: true,
+      useShortDoctype              : true
+    }))
+    .pipe(gulp.dest(`${dirs.dest}`));
+});
+
+gulp.task('js', () => {
+  return gulp.src(`${dirs.source}/assets/js/script.js`)
+    .pipe(gulpSourcemaps.init())
+    .pipe(gulpBrowserify({
+      transform: ['babelify']
+    }))
+    .pipe(gulpUglify())
+    .pipe(gulpSourcemaps.write('.'))
+    .pipe(gulp.dest(`${dirs.dest}/assets/js`));
+});
+
+gulp.task('svg:icons', () => {
+  return gulp.src(`${dirs.source}/assets/images/icons/**/*.svg`)
+    .pipe(gulpSvgmin())
+    .pipe(gulpSvgstore())
+    .pipe(gulp.dest(`${dirs.dest}/assets/images`));
+});
+
+gulp.task('watch', () => {
+  gulp.watch(`${dirs.source}/**/*.html`, ['html']);
+  gulp.watch(`${dirs.source}/assets/css/**/*.css`, ['css']);
+  gulp.watch(`${dirs.source}/assets/js/**/*.js`, ['js']);
+  gulp.watch(`${dirs.source}/assets/images/icons/**/*.svg`, ['svg:icons']);
+});
+
+gulp.task('default', [
+  'css',
+  'html',
+  'js',
+  'svg:icons',
+  'watch'
+]);
+
+gulp.task('build', [
+  'css',
+  'html',
+  'js',
+  'svg:icons'
+]);

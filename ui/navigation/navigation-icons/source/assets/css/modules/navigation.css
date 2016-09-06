@@ -1,0 +1,49 @@
+/* modules/navigation.css */
+
+:root {
+  --navigation-background-color: #f0f6ff;
+  --navigation-border-radius: 0.25rem;
+
+  --navigation-anchor-padding: 1.5rem;
+  --navigation-anchor-text-decoration: none;
+}
+
+.navigation {
+  background-color: #f0f6ff;
+  border-radius: 0.25rem;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.3);
+}
+
+.navigation ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.navigation a {
+  display: block;
+  padding: 1.5rem;
+  position: relative;
+  text-decoration: none;
+}
+
+.navigation a:focus::after,
+.navigation a:hover::after {
+  opacity: 1;
+}
+
+.navigation a::after {
+  bottom: 0;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.3);
+  content: '';
+  left: 0;
+  opacity: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  transition: opacity 0.3s;
+}
+
+.navigation--inline ul {
+  display: flex;
+}
