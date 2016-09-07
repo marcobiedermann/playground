@@ -1,0 +1,39 @@
+.navigation ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.navigation a {
+  display: block;
+}
+
+.navigation--inline {
+  text-align: center;
+}
+
+.navigation--inline ul {
+  margin: -1.5%;
+}
+
+.navigation--inline li {
+  display: inline-block;
+  margin: 1.5%;
+}
+
+.navigation--main {
+  margin-bottom: 2rem;
+}
+
+.navigation--main ul {
+  margin: -1.5%;
+  flex-wrap: wrap;
+  display: flex;
+}
+
+.navigation--main li {
+  display: inline-block;
+  flex-grow: 1;
+  flex-basis: calc(50% - 3%);
+  margin: 1.5%;
+}
