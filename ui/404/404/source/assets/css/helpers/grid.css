@@ -1,0 +1,23 @@
+:root {
+  --grid-max-width: 40rem;
+  --grid-width: 90%;
+  --grid-gutter: 3%;
+}
+
+.grid {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: var(--grid-max-width);
+  width: var(--grid-width);
+}
+
+.grid__row {
+  margin: calc(var(--grid-gutter) / -2);
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.grid__col {
+  margin: calc(var(--grid-gutter) / 2);
+  flex-grow: 1;
+}

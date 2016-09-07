@@ -1,0 +1,21 @@
+/* helpers/animation-shake.css */
+
+@keyframes shake-vertical {
+
+  15%,
+  45%,
+  75% {
+    transform: translateY(-0.75rem);
+  }
+
+  30%,
+  60% {
+    transform: translateY(0.75rem);
+  }
+
+}
+
+.animation--shake--vertical {
+  animation-name: shake-vertical;
+  will-change: transform;
+}

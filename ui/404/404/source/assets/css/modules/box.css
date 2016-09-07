@@ -1,0 +1,18 @@
+/* modules/box.css */
+
+:root {
+  --box-background-color: #fff;
+  --box-padding-horizontal: 2rem;
+  --box-padding-vertical: 3rem;
+}
+
+.box {
+  background-color: var(--box-background-color);
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.3);
+  font-size: 6.25rem;
+  padding-bottom: var(--box-padding-vertical);
+  padding-left: var(--box-padding-horizontal);
+  padding-right: var(--box-padding-horizontal);
+  padding-top: var(--box-padding-vertical);
+  text-align: center;
+}
