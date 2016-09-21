@@ -4,6 +4,7 @@
   "description": "",
   "scripts": {
     "build": "gulp build",
+    "start": "gulp",
     "test": "gulp build"
   },
   "author": "Marco Biedermann",
