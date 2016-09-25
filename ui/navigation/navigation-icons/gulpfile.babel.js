@@ -1,14 +1,17 @@
-import gulp           from 'gulp';
-import gulpBrowserify from 'gulp-browserify';
-import gulpCleanCss   from 'gulp-clean-css';
-import gulpHtmlmin    from 'gulp-htmlmin';
-import gulpPostcss    from 'gulp-postcss';
-import gulpSourcemaps from 'gulp-sourcemaps';
-import gulpSvgmin     from 'gulp-svgmin';
-import gulpSvgstore   from 'gulp-svgstore';
-import gulpUglify     from 'gulp-uglify';
-import postcssCssnext from 'postcss-cssnext';
-import postcssImport  from 'postcss-import';
+import babelify          from 'babelify';
+import browserify        from 'browserify';
+import gulp              from 'gulp';
+import gulpCleanCss      from 'gulp-clean-css';
+import gulpHtmlmin       from 'gulp-htmlmin';
+import gulpPostcss       from 'gulp-postcss';
+import gulpSourcemaps    from 'gulp-sourcemaps';
+import gulpSvgmin        from 'gulp-svgmin';
+import gulpSvgstore      from 'gulp-svgstore';
+import gulpUglify        from 'gulp-uglify';
+import postcssCssnext    from 'postcss-cssnext';
+import postcssImport     from 'postcss-import';
+import vinylBuffer       from 'vinyl-buffer';
+import vinylSourceStream from 'vinyl-source-stream';
 
 const dirs = {
   source: './source',
@@ -55,11 +58,16 @@ gulp.task('html', () => {
 });
 
 gulp.task('js', () => {
-  return gulp.src(`${dirs.source}/assets/js/script.js`)
+  const b = browserify({
+    entries: `${dirs.source}/assets/js/script.js`,
+    debug: true,
+    transform: [babelify]
+  });
+
+  return b.bundle()
+    .pipe(vinylSourceStream('script.js'))
+    .pipe(vinylBuffer())
     .pipe(gulpSourcemaps.init())
-    .pipe(gulpBrowserify({
-      transform: ['babelify']
-    }))
     .pipe(gulpUglify())
     .pipe(gulpSourcemaps.write('.'))
     .pipe(gulp.dest(`${dirs.dest}/assets/js`));
