@@ -57,8 +57,7 @@ gulp.task('html', () => {
 
 gulp.task('js', () => {
   const b = browserify({
-    entries: `${dirs.source}/assets/js/script.js`,
-    debug: true,
+    entries: `${dirs.source}/assets/js/script.js`
     transform: [babelify]
   });
 
