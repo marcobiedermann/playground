@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Koch</title>
+  <link href="assets/css/style.css" rel="stylesheet">
+</head>
+<body>
+
+  <canvas id="canvas"></canvas>
+
+  <script src="assets/js/canvas.js"></script>
+  <script src="assets/js/koch.js"></script>
+  <script>
+    var canvas  = document.getElementById('canvas');
+    var context = canvas.getContext('2d');
+    var width   = canvas.width  = window.innerWidth;
+    var height  = canvas.height = window.innerHeight;
+
+    var p0 = {
+      x: 0,
+      y: -321
+    };
+    var p1 = {
+      x: 278,
+      y: 160
+    };
+    var p2 = {
+      x: -278,
+      y: 160
+    };
+
+    var limit = 5;
+
+    context.translate(width / 2, height / 2);
+
+    koch(p0, p1, limit);
+    koch(p1, p2, limit);
+    koch(p2, p0, limit);
+
+  </script>
+
+</body>
+</html>
