@@ -26,13 +26,11 @@ class BarnsleyFern {
   }
 
   getRule(rules) {
-    const rulesLenght = rules.length;
-
+    let rulesLenght = rules.length;
     let random = Math.random();
-    let i;
 
-    for (i = 0; i < rulesLenght; i++) {
-      const rule = rules[i];
+    while (rulesLenght--) {
+      const rule = rules[rulesLenght];
 
       if (random < rule.weight) {
         return rule;
@@ -40,24 +38,27 @@ class BarnsleyFern {
 
       random -= rule.weight;
     }
+
   }
 
   render(options) {
     const { scale, opacity } = this;
 
+    let iterations = 100;
     let x = Math.random();
     let y = Math.random();
 
-    for (let i = 0; i < 100; i++) {
-      const rule = this.getRule(this.rules);
-      const x1 = x * rule.a + y * rule.b + rule.tx;
-      const y1 = x * rule.c + y * rule.d + rule.ty;
+    while (iterations--) {
+        const rule = this.getRule(this.rules);
+        const x1 = x * rule.a + y * rule.b + rule.tx;
+        const y1 = x * rule.c + y * rule.d + rule.ty;
 
-      x = x1;
-      y = y1;
+        x = x1;
+        y = y1;
 
-      this.context.fillRect(x * scale, -y * scale, opacity, opacity);
+        this.context.fillRect(x * scale, -y * scale, opacity, opacity);
     }
+
   }
 
   update(options) {
