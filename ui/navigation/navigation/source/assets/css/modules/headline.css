@@ -1,0 +1,17 @@
+:root {
+  --h1FontSize: 42px;
+  --h1FontFamily: 'Norican';
+  --h1FontFamilyFallback: cursive;
+  --h1FontWeight: 400;
+  --h1MarginBottom: 24px;
+  --h1TextTransform: lowercase;
+}
+
+h1 {
+  font-family: var(--h1FontFamily), var(--h1FontFamilyFallback);
+  font-size: var(--h1FontSize);
+  font-weight: var(--h1FontWeight);
+  margin-bottom: var(--h1MarginBottom);
+  margin-top: 0;
+  text-transform: var(--h1TextTransform);
+}

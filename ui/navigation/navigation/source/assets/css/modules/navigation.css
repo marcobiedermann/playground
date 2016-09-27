@@ -1,0 +1,80 @@
+:root {
+  --navigationMainBackgroundColor: #fff;
+  --navigationMainBorderRadius: .25rem;
+  --navigationMainFontSize: .75rem;
+  --navigationMainFontWeight: bold;
+  --navigationMainPaddingHorizontal: 1.25rem;
+  --navigationMainPaddingVertical: .75rem;
+  --navigationMainTextTransform: uppercase;
+
+  --navigationMainItemMargin: 1.5%;
+
+  --navigationMainLinkBorderRadius: .125rem;
+  --navigationMainLinkColor: #aeaeae;
+  --navigationMainLinkPaddingHorizontal: .75rem;
+  --navigationMainLinkPaddingVertical: .5rem;
+
+  --navigationMainLinkHoverBackgroundColor: #f43958;
+  --navigationMainLinkHoverColor: #fff;
+}
+
+.navigation ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.navigation a {
+  display: block;
+}
+
+.navigation--inline ul {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.navigation--inline li {
+  flex-grow: 1;
+}
+
+.navigation--main {
+  background-color: var(--navigationMainBackgroundColor);
+  box-shadow: 0 0 .125rem rgba(0, 0, 0, .75);
+  border-radius: var(--navigationMainBorderRadius);
+  font-weight: var(--navigationMainFontWeight);
+  font-size: var(--navigationMainFontSize);
+  padding: var(--navigationMainPaddingVertical) var(--navigationMainPaddingHorizontal);
+  position: relative;
+  text-transform: var(--navigationMainTextTransform);
+}
+
+.navigation--main::before {
+  border-bottom: .25rem solid var(--navigationMainBackgroundColor);
+  border-left: .25rem solid transparent;
+  border-right: .25rem solid transparent;
+  bottom: 100%;
+  content: '';
+  left: 50%;
+  position: absolute;
+  transform: translateX(-50%);
+}
+
+.navigation--main ul {
+  margin: calc(var(--navigationMainItemMargin) * -1);
+}
+
+.navigation--main li {
+  margin: var(--navigationMainItemMargin);
+}
+
+.navigation--main a {
+  border-radius: var(--navigationMainLinkBorderRadius);
+  color: var(--navigationMainLinkColor);
+  padding: var(--navigationMainLinkPaddingVertical) var(--navigationMainLinkPaddingHorizontal);
+}
+
+.navigation--main a:focus,
+.navigation--main a:hover {
+  background-color: var(--navigationMainLinkHoverBackgroundColor);
+  color: var(--navigationMainLinkHoverColor);
+}
