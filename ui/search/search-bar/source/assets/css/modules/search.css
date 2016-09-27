@@ -1,0 +1,50 @@
+:root {
+  --searchBackgroundColor: #42454e;
+  --searchBorderRadius: .125rem;
+  --searchFontSize: .75rem;
+  --searchPadding: .5rem;
+
+  --searchInputBorderRadius: .125rem;
+
+  --searchInputSearchBackgroundColor: #fff;
+  --searchInputSearchColor: #42454e;
+  --searchInputSearchPaddingHorizontal: .5rem;
+  --searchInputSearchPaddingVertical: .375rem;
+
+  --searchInputButtonBackgroundColor: #1bba9a;
+  --searchInputButtonColor: #fff;
+  --searchInputButtonFontWeight: bold;
+  --searchInputButtonPaddingHorizontal: .625rem;
+  --searchInputButtonPaddingVertical: .375rem;
+  --searchInputButtonHoverBackgroundColor: #189e83;
+}
+
+.search {
+  background-color: var(--searchBackgroundColor);
+  border-radius: var(--searchBorderRadius);
+  font-size: var(--searchFontSize);
+  padding: var(--searchPadding);
+}
+
+.search input[type="search"],
+.search input[type="submit"] {
+  border-radius: var(--searchInputBorderRadius);
+}
+
+.search input[type="search"] {
+  background-color: var(--searchInputSearchBackgroundColor);
+  color: var(--searchInputSearchColor);
+  padding: var(--searchInputSearchPaddingVertical) var(--searchInputSearchPaddingHorizontal);
+}
+
+.search input[type="submit"] {
+  background-color: var(--searchInputButtonBackgroundColor);
+  color: var(--searchInputButtonColor);
+  font-weight: var(--searchInputButtonFontWeight);
+  margin-left: .5rem;
+  padding: var(--searchInputButtonPaddingVertical) var(--searchInputButtonPaddingHorizontal);
+}
+
+.search input[type="submit"]:hover {
+  background-color: var(--searchInputButtonHoverBackgroundColor);
+}
