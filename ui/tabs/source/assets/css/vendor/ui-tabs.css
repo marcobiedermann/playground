@@ -1,0 +1,59 @@
+:root {
+  --tabsMarginBottom: 1.5rem;
+
+  --tabsNavColor: #222;
+
+  --tabsAnchorFontWeight: 700;
+  --tabsAnchorPaddingHorizontal: 1rem;
+  --tabsAnchorPaddingVertical: 0.5rem;
+
+  --tabsAnchorActiveColor: #dd0423;
+
+  --tabsPanelBackgroundColor: #fff;
+  --tabsPanelPadding: 1rem;
+}
+
+.ui-tabs {
+  margin-bottom: var(--tabsMarginBottom);
+}
+
+.ui-tabs-nav {
+  color: var(--tabsNavColor);
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  text-transform: uppercase;
+}
+
+@media (min-width: 30em) {
+
+  .ui-tabs-nav {
+    flex-direction: row;
+  }
+
+}
+
+.ui-tabs-anchor {
+  color: inherit;
+  display: block;
+  font-weight: var(--tabsAnchorFontWeight);
+  padding-bottom: var(--tabsAnchorPaddingVertical);
+  padding-left: var(--tabsAnchorPaddingHorizontal);
+  padding-right: var(--tabsAnchorPaddingHorizontal);
+  padding-top: var(--tabsAnchorPaddingVertical);
+  position: relative;
+  text-decoration: none;
+}
+
+.ui-tabs-active .ui-tabs-anchor {
+  background-color: var(--tabsPanelBackgroundColor);
+  color: var(--tabsAnchorActiveColor);
+}
+
+.ui-tabs-panel {
+  background-color: var(--tabsPanelBackgroundColor);
+  padding: var(--tabsPanelPadding);
+}
