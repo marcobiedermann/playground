@@ -49,14 +49,14 @@ class BarnsleyFern {
     let y = Math.random();
 
     while (iterations--) {
-        const rule = this.getRule(this.rules);
-        const x1 = x * rule.a + y * rule.b + rule.tx;
-        const y1 = x * rule.c + y * rule.d + rule.ty;
+      const rule = this.getRule(this.rules);
+      const x1 = x * rule.a + y * rule.b + rule.tx;
+      const y1 = x * rule.c + y * rule.d + rule.ty;
 
-        x = x1;
-        y = y1;
+      x = x1;
+      y = y1;
 
-        this.context.fillRect(x * scale, -y * scale, opacity, opacity);
+      this.context.fillRect(x * scale, -y * scale, opacity, opacity);
     }
 
   }
