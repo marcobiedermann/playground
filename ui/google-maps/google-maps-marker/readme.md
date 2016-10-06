@@ -1,0 +1,7 @@
+[![dependencies Status](https://david-dm.org/marcobiedermann/playground/status.svg?path=ui/google-maps/google-maps-marker)](https://david-dm.org/marcobiedermann/playground?path=ui/google-maps/google-maps-marker) [![devDependencies Status](https://david-dm.org/marcobiedermann/playground/dev-status.svg?path=ui/google-maps/google-maps-marker)](https://david-dm.org/marcobiedermann/playground?path=ui/google-maps/google-maps-marker&type=dev)
+
+# Google Maps Marker
+
+## Icons
+
+Europe Flag Icons by [Alain Jollat](http://antibakteriell.deviantart.com/art/Flag-Icons-Europe-166536006)
