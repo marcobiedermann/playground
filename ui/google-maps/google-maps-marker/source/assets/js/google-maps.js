@@ -4,7 +4,10 @@ class GoogleMaps {
     this.element = element;
 
     this.init(options);
-    this.onResize();
+
+    this.onResize = this.onResize.bind(this);
+
+    this.addEventListeners();
   }
 
   init(options) {
@@ -55,12 +58,16 @@ class GoogleMaps {
   onResize() {
     const { map } = this;
 
-    google.maps.event.addDomListener(window, 'resize', () => {
-      const center = map.getCenter();
+    const center = map.getCenter();
 
-      google.maps.event.trigger(map, 'resize');
-      map.setCenter(center);
-    });
+    google.maps.event.trigger(map, 'resize');
+    map.setCenter(center);
+  }
+
+  addEventListeners() {
+    const { map } = this;
+
+    google.maps.event.addDomListener(window, 'resize', () => this.onResize());
   }
 
 }
