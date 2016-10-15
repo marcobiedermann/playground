@@ -10,12 +10,12 @@
   "author": "Marco Biedermann",
   "license": "ISC",
   "devDependencies": {
-    "babel-preset-latest": "^6.14.0",
+    "babel-preset-latest": "^6.16.0",
     "gulp": "^3.9.1",
-    "gulp-clean-css": "^2.0.12",
+    "gulp-clean-css": "^2.0.13",
     "gulp-htmlmin": "^3.0.0",
     "gulp-postcss": "^6.2.0",
-    "gulp-sourcemaps": "^1.6.0",
+    "gulp-sourcemaps": "^2.1.1",
     "postcss-cssnext": "^2.8.0",
     "postcss-import": "^8.1.2",
     "stylelint": "^7.4.2"
