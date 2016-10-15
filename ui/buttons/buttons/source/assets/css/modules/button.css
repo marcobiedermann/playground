@@ -1,9 +1,9 @@
 :root {
   --buttonBackgroundColor: #ff4c47;
-  --buttonBorderRadius: .25rem;
+  --buttonBorderRadius: 0.25rem;
   --buttonColor: var(--baseColor);
-  --buttonPaddingHorizontal: .8125rem;
-  --buttonPaddingVertical: .75rem;
+  --buttonPaddingHorizontal: 0.8125rem;
+  --buttonPaddingVertical: 0.75rem;
 
   --buttonHoverBackgroundColor: #ce413b;
 }
@@ -11,14 +11,14 @@
 .button {
   background-color: var(--buttonBackgroundColor);
   border-radius: var(--buttonBorderRadius);
-  box-shadow: 0 .125rem 0 #ce413b;
+  box-shadow: 0 0.125rem 0 #ce413b;
   color: var(--buttonColor);
   display: inline-block;
+  outline: 0;
   padding: var(--buttonPaddingVertical) var(--buttonPaddingHorizontal);
   text-align: center;
   text-transform: uppercase;
-  transition: background-color .3s;
-  outline: 0;
+  transition: background-color 0.3s;
 }
 
 .button:focus,

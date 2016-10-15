@@ -20,8 +20,8 @@
 .ui-tabs-nav {
   color: var(--tabsNavColor);
   display: flex;
-  flex-wrap: wrap;
   flex-direction: column;
+  flex-wrap: wrap;
   list-style: none;
   margin: 0;
   padding: 0;
@@ -40,10 +40,7 @@
   color: inherit;
   display: block;
   font-weight: var(--tabsAnchorFontWeight);
-  padding-bottom: var(--tabsAnchorPaddingVertical);
-  padding-left: var(--tabsAnchorPaddingHorizontal);
-  padding-right: var(--tabsAnchorPaddingHorizontal);
-  padding-top: var(--tabsAnchorPaddingVertical);
+  padding: var(--tabsAnchorPaddingVertical) var(--tabsAnchorPaddingHorizontal);
   position: relative;
   text-decoration: none;
 }

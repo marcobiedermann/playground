@@ -9,6 +9,7 @@ import gulpSourcemaps    from 'gulp-sourcemaps';
 import gulpUglify        from 'gulp-uglify';
 import postcssCssnext    from 'postcss-cssnext';
 import postcssImport     from 'postcss-import';
+import stylelint         from 'stylelint';
 import vinylBuffer       from 'vinyl-buffer';
 import vinylSourceStream from 'vinyl-source-stream';
 
@@ -82,15 +83,23 @@ gulp.task('js', () => {
     .pipe(gulp.dest(`${dirs.dest}/assets/js`));
 });
 
+gulp.task('lint:css', () => {
+  return gulp.src(`${dirs.source}/assets/css/**/*.css`)
+    .pipe(gulpPostcss([
+      stylelint()
+    ]));
+})
+
 gulp.task('watch', () => {
   gulp.watch(`${dirs.source}/**/*.html`, ['html']);
-  gulp.watch(`${dirs.source}/assets/css/**/*.css`, ['css']);
+  gulp.watch(`${dirs.source}/assets/css/**/*.css`, ['lint:css', 'css']);
   gulp.watch(`${dirs.source}/assets/js/**/*.js`, ['js']);
   gulp.watch(`${dirs.source}/content/images/**/*.{gif,ico,jpg,jpeg,png}`, ['images:content']);
   gulp.watch(`${dirs.source}/data/**/*.json`, ['data']);
 });
 
 gulp.task('default', [
+  'lint',
   'css',
   'html',
   'js',
@@ -99,7 +108,12 @@ gulp.task('default', [
   'watch'
 ]);
 
+gulp.task('lint', [
+  'lint:css'
+]);
+
 gulp.task('build', [
+  'lint',
   'css',
   'html',
   'js',

@@ -1,18 +1,18 @@
 :root {
   --navigationMainBackgroundColor: #fff;
-  --navigationMainBorderRadius: .25rem;
-  --navigationMainFontSize: .75rem;
+  --navigationMainBorderRadius: 0.25rem;
+  --navigationMainFontSize: 0.75rem;
   --navigationMainFontWeight: bold;
   --navigationMainPaddingHorizontal: 1.25rem;
-  --navigationMainPaddingVertical: .75rem;
+  --navigationMainPaddingVertical: 0.75rem;
   --navigationMainTextTransform: uppercase;
 
   --navigationMainItemMargin: 1.5%;
 
-  --navigationMainLinkBorderRadius: .125rem;
+  --navigationMainLinkBorderRadius: 0.125rem;
   --navigationMainLinkColor: #aeaeae;
-  --navigationMainLinkPaddingHorizontal: .75rem;
-  --navigationMainLinkPaddingVertical: .5rem;
+  --navigationMainLinkPaddingHorizontal: 0.75rem;
+  --navigationMainLinkPaddingVertical: 0.5rem;
 
   --navigationMainLinkHoverBackgroundColor: #f43958;
   --navigationMainLinkHoverColor: #fff;
@@ -39,19 +39,19 @@
 
 .navigation--main {
   background-color: var(--navigationMainBackgroundColor);
-  box-shadow: 0 0 .125rem rgba(0, 0, 0, .75);
   border-radius: var(--navigationMainBorderRadius);
-  font-weight: var(--navigationMainFontWeight);
+  box-shadow: 0 0 0.125rem rgba(0, 0, 0, 0.75);
   font-size: var(--navigationMainFontSize);
+  font-weight: var(--navigationMainFontWeight);
   padding: var(--navigationMainPaddingVertical) var(--navigationMainPaddingHorizontal);
   position: relative;
   text-transform: var(--navigationMainTextTransform);
 }
 
 .navigation--main::before {
-  border-bottom: .25rem solid var(--navigationMainBackgroundColor);
-  border-left: .25rem solid transparent;
-  border-right: .25rem solid transparent;
+  border-bottom: 0.25rem solid var(--navigationMainBackgroundColor);
+  border-left: 0.25rem solid transparent;
+  border-right: 0.25rem solid transparent;
   bottom: 100%;
   content: '';
   left: 50%;

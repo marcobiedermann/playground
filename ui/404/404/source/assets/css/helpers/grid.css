@@ -12,12 +12,12 @@
 }
 
 .grid__row {
-  margin: calc(var(--grid-gutter) / -2);
   display: flex;
   flex-wrap: wrap;
+  margin: calc(var(--grid-gutter) / -2);
 }
 
 .grid__col {
-  margin: calc(var(--grid-gutter) / 2);
   flex-grow: 1;
+  margin: calc(var(--grid-gutter) / 2);
 }

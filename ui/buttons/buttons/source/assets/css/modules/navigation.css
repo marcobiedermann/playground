@@ -26,14 +26,14 @@
 }
 
 .navigation--main ul {
-  margin: -1.5%;
-  flex-wrap: wrap;
   display: flex;
+  flex-wrap: wrap;
+  margin: -1.5%;
 }
 
 .navigation--main li {
   display: inline-block;
-  flex-grow: 1;
   flex-basis: calc(50% - 3%);
+  flex-grow: 1;
   margin: 1.5%;
 }

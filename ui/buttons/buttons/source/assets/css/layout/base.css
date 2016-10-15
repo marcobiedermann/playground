@@ -4,7 +4,7 @@
   --bodyBackgroundColor: #e2e2e2;
   --bodyFontFamily: 'Tauri';
   --bodyFontFamilyFallback: sans-serif;
-  --bodyFontSize: .875rem;
+  --bodyFontSize: 0.875rem;
   --bodyFontWeight: 400;
   --bodyLineHeight: 1.5;
 }

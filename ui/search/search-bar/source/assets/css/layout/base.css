@@ -5,7 +5,7 @@
   --bodyColor: #000;
   --bodyFontFamily: 'Open Sans';
   --bodyFontFamilyFallback: sans-serif;
-  --bodyFontSize: .875rem;
+  --bodyFontSize: 0.875rem;
   --bodyFontWeight: 400;
   --bodyLineHeight: 1.5;
 }

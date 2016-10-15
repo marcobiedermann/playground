@@ -8,6 +8,7 @@ import gulpSourcemaps    from 'gulp-sourcemaps';
 import gulpUglify        from 'gulp-uglify';
 import postcssCssnext    from 'postcss-cssnext';
 import postcssImport     from 'postcss-import';
+import stylelint         from 'stylelint';
 import vinylBuffer       from 'vinyl-buffer';
 import vinylSourceStream from 'vinyl-source-stream';
 
@@ -55,6 +56,13 @@ gulp.task('html', () => {
     .pipe(gulp.dest(`${dirs.dest}`));
 });
 
+gulp.task('lint:css', () => {
+  return gulp.src(`${dirs.source}/assets/css/**/*.css`)
+    .pipe(gulpPostcss([
+      stylelint()
+    ]));
+})
+
 gulp.task('js', () => {
   const b = browserify({
     entries: `${dirs.source}/assets/js/script.js`,
@@ -72,18 +80,24 @@ gulp.task('js', () => {
 
 gulp.task('watch', () => {
   gulp.watch(`${dirs.source}/**/*.html`, ['html']);
-  gulp.watch(`${dirs.source}/assets/css/**/*.css`, ['css']);
+  gulp.watch(`${dirs.source}/assets/css/**/*.css`, ['lint:css', 'css']);
   gulp.watch(`${dirs.source}/assets/js/**/*.js`, ['js']);
 });
 
 gulp.task('default', [
+  'lint',
   'css',
   'html',
   'js',
   'watch'
 ]);
 
+gulp.task('lint', [
+  'lint:css'
+]);
+
 gulp.task('build', [
+  'lint',
   'css',
   'html',
   'js'

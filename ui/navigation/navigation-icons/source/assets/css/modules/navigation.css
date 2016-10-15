@@ -27,11 +27,6 @@
   text-decoration: none;
 }
 
-.navigation a:focus::after,
-.navigation a:hover::after {
-  opacity: 1;
-}
-
 .navigation a::after {
   bottom: 0;
   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.3);
@@ -42,6 +37,11 @@
   right: 0;
   top: 0;
   transition: opacity 0.3s;
+}
+
+.navigation a:focus::after,
+.navigation a:hover::after {
+  opacity: 1;
 }
 
 .navigation--inline ul {

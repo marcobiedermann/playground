@@ -18,8 +18,8 @@
 
 html {
   box-sizing: border-box;
-  height: 100%;
   font-size: var(--htmlFontSize);
+  height: 100%;
 }
 
 body {

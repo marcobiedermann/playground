@@ -1,5 +1,5 @@
 a {
   outline: 0;
   text-decoration: none;
-  transition: color .3s, background-color .3s;
+  transition: color 0.3s, background-color 0.3s;
 }

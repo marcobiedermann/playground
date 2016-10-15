@@ -5,7 +5,7 @@
   "scripts": {
     "build": "gulp build",
     "start": "gulp",
-    "test": "gulp build"
+    "test": "gulp lint"
   },
   "author": "Marco Biedermann",
   "license": "ISC",
@@ -22,6 +22,7 @@
     "gulp-uglify": "^2.0.0",
     "postcss-cssnext": "^2.8.0",
     "postcss-import": "^8.1.2",
+    "stylelint": "^7.4.2",
     "vinyl-buffer": "^1.0.0",
     "vinyl-source-stream": "^1.1.0"
   }

@@ -5,12 +5,13 @@
   "scripts": {
     "build": "gulp build",
     "start": "gulp",
-    "test": "gulp build"
+    "test": "gulp lint"
   },
   "author": "Marco Biedermann",
   "license": "ISC",
   "devDependencies": {
     "babel-preset-latest": "^6.14.0",
+    "babelify": "^7.3.0",
     "browserify": "^13.1.0",
     "debowerify": "^1.5.0",
     "gulp": "^3.9.1",
@@ -21,6 +22,7 @@
     "gulp-uglify": "^2.0.0",
     "postcss-cssnext": "^2.8.0",
     "postcss-import": "^8.1.2",
+    "stylelint": "^7.4.2",
     "vinyl-buffer": "^1.0.0",
     "vinyl-source-stream": "^1.1.0"
   },
