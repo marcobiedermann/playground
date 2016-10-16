@@ -1,0 +1,109 @@
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+  height: 100%;
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  line-height: 1.5;
+  margin: 0;
+  min-height: 100%;
+}
+
+a {
+  text-decoration: none;
+}
+
+.align {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+
+.navigation__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.navigation__list--inline {
+  display: flex;
+}
+
+.navigation__anchor {
+  color: inherit;
+  display: inline-block;
+}
+
+.navigation--main {
+  color: #111;
+  font-weight: 700;
+  font-size: 2rem;
+}
+
+.navigation--main .navigation__list {
+  margin: -1rem;
+}
+
+.navigation--main .navigation__item {
+  margin: 1rem;
+}
+
+.navigation--main .navigation__anchor {
+  overflow: hidden;
+  padding: .25rem 0;
+  position: relative;
+}
+
+.navigation--main .navigation__anchor::after {
+  animation: hoverOut 0.5s cubic-bezier(0.77, 0, 0.175, 1) 0s 1 both;
+  background-color: #111;
+  bottom: 0;
+  content: '';
+  height: 0.125rem;
+  left: 0;
+  position: absolute;
+  top: auto;
+  transform: translateX(-100%);
+  width: 100%;
+  z-index: 1
+}
+
+.navigation--main .navigation__anchor:hover::after {
+  animation: hoverIn 0.5s cubic-bezier(0.77, 0, 0.175, 1) 0s 1 both;
+}
+
+.navigation--main .navigation__anchor.is--active::after {
+  animation: none;
+  transform: translateX(0);
+}
+
+@keyframes hoverIn {
+
+  0% {
+    transform: translateX(-100%);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+
+}
+
+@keyframes hoverOut {
+
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(101%);
+  }
+
+}
