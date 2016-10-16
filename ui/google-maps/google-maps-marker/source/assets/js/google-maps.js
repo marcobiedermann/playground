@@ -65,9 +65,7 @@ class GoogleMaps {
   }
 
   addEventListeners() {
-    const { map } = this;
-
-    google.maps.event.addDomListener(window, 'resize', () => this.onResize());
+    window.addEventListener('resize', this.onResize);
   }
 
 }
