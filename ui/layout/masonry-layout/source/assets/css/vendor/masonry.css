@@ -1,0 +1,28 @@
+:root {
+  --masonryGutter: 3%;
+}
+
+.masonry {
+  margin: calc(var(--masonryGutter) * -1);
+}
+
+.masonry__item {
+  margin: calc(var(--masonryGutter) / 2);
+  width: calc(100% / 2 - var(--masonryGutter));
+}
+
+@media (min-width: 30em) {
+
+  .masonry__item {
+    width: calc(100% / 3 - var(--masonryGutter));
+  }
+
+}
+
+@media (min-width: 48em) {
+
+  .masonry__item {
+    width: calc(100% / 4 - var(--masonryGutter));
+  }
+
+}
