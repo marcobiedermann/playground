@@ -1,0 +1,17 @@
+.box {
+  background-color: #eee;
+  color: #fff;
+  padding: 1rem;
+}
+
+.box--red {
+  background-color: red;
+}
+
+.box--green {
+  background-color: green;
+}
+
+.box--blue {
+  background-color: blue;
+}

@@ -1,0 +1,23 @@
+:root {
+  --isotopeGutter: 3%;
+}
+
+.isotope__filter,
+.isotope__sort {
+  display: flex;
+  list-style: none;
+  margin-top: 0;
+  margin-bottom: 1.5rem;
+  padding: 0;
+}
+
+.isotope__layout {
+  list-style: none;
+  margin: calc(var(--isotopeGutter) / -2);
+  padding: 0;
+}
+
+.isotope__item {
+  margin: calc(var(--isotopeGutter) / 2);
+  width: calc(100% / 3 - var(--isotopeGutter));
+}
