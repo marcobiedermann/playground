@@ -1,0 +1,38 @@
+:root {
+  --chartMarginBottom: 1.5rem;
+
+  --chartBarColor: #f32a64;
+
+  --chartColumnColor: #e6edf4;
+
+  --chartAxisColor: #e6edf4;
+  --chartAxisFontSize: 0.625rem;
+  --chartAxisStrokeWidth: 0.125rem;
+}
+
+.chart {
+  margin-bottom: var(--chartMarginBottom);
+}
+
+.chart__bar {
+  fill: var(--chartBarColor);
+}
+
+.chart__column {
+  fill: var(--chartColumnColor);
+}
+
+.chart__axis {
+  font-size: var(--chartAxisFontSize);
+}
+
+.chart__axis path,
+.chart__axis line {
+  fill: none;
+  stroke: var(--chartAxisColor);
+  stroke-width: var(--chartAxisStrokeWidth);
+}
+
+.chart__axis path {
+  display: none;
+}
