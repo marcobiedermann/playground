@@ -1,0 +1,36 @@
+input,
+select,
+textarea {
+  color: inherit;
+  font: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+.form {
+  margin: -1rem;
+}
+
+.form__field {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 1rem;
+}
+
+.form__group {
+  flex-grow: 1;
+}
+
+.form input[type='date'],
+.form input[type='email'],
+.form input[type='number'],
+.form input[type='search'],
+.form input[type='tel'],
+.form input[type='text'],
+.form input[type='time'],
+.form input[type='url'],
+.form select,
+.form textarea {
+  padding: 0.25rem 0.5rem;
+  width: 100%;
+}
