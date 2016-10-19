@@ -31,28 +31,32 @@ class FormStorage {
   }
 
   getForm() {
-    if (window.localStorage.getItem(`${this.localStorageKey}-${this.element.name}`)) {
-      JSON.parse(window.localStorage.getItem(`${this.localStorageKey}-${this.element.name}`)).map(field => {
-        const element = this.element.querySelector(field.id);
+    const { element } = this;
+    const formStorageKey = window.localStorage.getItem(`${this.localStorageKey}-${element.name}`);
 
-        element.checked = field.checked;
-        element.value = field.value;
+    if (formStorageKey) {
+      JSON.parse(formStorageKey).map(field => {
+        const input = element.querySelector(field.id);
+
+        input.checked = field.checked;
+        input.value   = field.value;
       });
     }
   }
 
   setForm() {
+    const { element } = this;
     const form = [];
 
-    Array.from(this.element.querySelectorAll(this.formElements.join(', '))).map(element => {
+    Array.from(element.querySelectorAll(this.formElements.join(', '))).map(input => {
       form.push({
-        id: `#${element.id}`,
-        checked: element.checked,
-        value: element.value
+        id     : `#${input.id}`,
+        checked: input.checked,
+        value  : input.value
       });
     })
 
-    window.localStorage.setItem(`${this.localStorageKey}-${this.element.name}`, JSON.stringify(form));
+    window.localStorage.setItem(`${this.localStorageKey}-${element.name}`, JSON.stringify(form));
   }
 
   onSubmit() {
