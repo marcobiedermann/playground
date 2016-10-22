@@ -22,8 +22,8 @@ imagesLoaded('.js-isotope', () => {
 
 });
 
-Array.from(isotopeFilterButtons).map((isotopeFilterButton) => {
-  return isotopeFilterButton.addEventListener('click', () => {
+Array.from(isotopeFilterButtons).forEach(isotopeFilterButton => {
+  isotopeFilterButton.addEventListener('click', () => {
     filterValue = isotopeFilterButton.getAttribute('data-filter');
 
     localStorage.setItem('isotope-filter', filterValue)
@@ -35,8 +35,8 @@ Array.from(isotopeFilterButtons).map((isotopeFilterButton) => {
   });
 });
 
-Array.from(isotopeSortButtons).map((isotopeSortButton) => {
-  return isotopeSortButton.addEventListener('click', () => {
+Array.from(isotopeSortButtons).forEach(isotopeSortButton => {
+  isotopeSortButton.addEventListener('click', () => {
     sortValue = isotopeSortButton.getAttribute('data-sort');
 
     localStorage.setItem('isotope-sort', sortValue)
