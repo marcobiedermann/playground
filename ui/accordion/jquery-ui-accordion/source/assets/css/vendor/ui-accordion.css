@@ -1,0 +1,50 @@
+:root {
+  --accordionMarginBottom: 1.5rem;
+
+  --accordionHeaderBackgroundColor: #981f32;
+  --accordionHeaderColor: #fff;
+  --accordionHeaderPaddingHorizontal: 0.5rem;
+  --accordionHeaderPaddingVertical: 0.25rem;
+
+  --accordionHeaderIconMarginRight: 0.5rem;
+  --accordionHeaderIconSize: 0.75rem;
+
+  --accordionContentBackgroundColor: #fff;
+  --accordionContentMargin: 0.5rem;
+  --accordionContentPadding: 0.5rem;
+}
+
+.ui-accordion {
+  margin-bottom: var(--accordionMarginBottom);
+}
+
+.ui-accordion-header {
+  background-color: var(--accordionHeaderBackgroundColor);
+  color: var(--accordionHeaderColor);
+  cursor: pointer;
+  margin: 0;
+  padding: var(--accordionHeaderPaddingVertical) var(--accordionHeaderPaddingHorizontal);
+}
+
+.ui-accordion-header-icon {
+  background-image: url('../images/accordion.svg');
+  background-size: 100%;
+  display: inline-block;
+  height: var(--accordionHeaderIconSize);
+  margin-right: var(--accordionHeaderIconMarginRight);
+  vertical-align: middle;
+  width: var(--accordionHeaderIconSize);
+}
+
+.ui-accordion-header-icon.ui-icon-triangle-1-s {
+  background-position: 0 -36px;
+}
+
+.ui-accordion-content {
+  background-color: var(--accordionContentBackgroundColor);
+  padding: var(--accordionContentPadding);
+}
+
+.ui-accordion-content + .ui-accordion-header {
+  margin-top: var(--accordionContentMargin);
+}
