@@ -24,7 +24,7 @@ class GoogleMaps {
   renderMarkers(locations) {
     const { map } = this;
 
-    this.markers = locations.map(location => {
+    this.markers = locations.forEach(location => {
       const marker = new google.maps.Marker({
         icon: location.icon,
         map: map,
