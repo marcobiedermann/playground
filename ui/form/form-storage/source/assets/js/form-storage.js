@@ -35,7 +35,7 @@ class FormStorage {
     const formStorageKey = window.localStorage.getItem(`${this.localStorageKey}-${element.name}`);
 
     if (formStorageKey) {
-      JSON.parse(formStorageKey).map(field => {
+      JSON.parse(formStorageKey).forEach(field => {
         const input = element.querySelector(field.id);
 
         input.checked = field.checked;
@@ -48,7 +48,7 @@ class FormStorage {
     const { element } = this;
     const form = [];
 
-    Array.from(element.querySelectorAll(this.formElements.join(', '))).map(input => {
+    Array.from(element.querySelectorAll(this.formElements.join(', '))).forEach(input => {
       form.push({
         id     : `#${input.id}`,
         checked: input.checked,
