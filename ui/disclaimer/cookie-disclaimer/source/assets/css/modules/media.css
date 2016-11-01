@@ -1,0 +1,24 @@
+:root {
+  --mediaObjectMarginHorizontal: 1em;
+}
+
+.media {
+  display: flex;
+}
+
+.media--center {
+  align-items: center;
+}
+
+.media__object--left {
+  margin-right: var(--mediaObjectMarginHorizontal);
+}
+
+.media__object--right {
+  margin-left: var(--mediaObjectMarginHorizontal);
+  order: 1;
+}
+
+.media__body {
+  flex-grow: 1;
+}

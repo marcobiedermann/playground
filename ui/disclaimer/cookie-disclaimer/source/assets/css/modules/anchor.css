@@ -1,0 +1,7 @@
+:root {
+  --anchorColor: inherit;
+}
+
+a {
+  color: var(--anchorColor);
+}

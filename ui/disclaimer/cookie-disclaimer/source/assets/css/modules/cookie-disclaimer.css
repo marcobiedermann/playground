@@ -1,0 +1,29 @@
+:root {
+  --cookieDisclaumerBackgroundColor: #208bcc;
+  --cookieDisclaumerColor: #fff;
+  --cookieDisclaumerFontSize: 0.75rem;
+  --cookieDisclaumerPadding: 0.75rem;
+}
+
+.cookie-disclaimer {
+  background-color: var(--cookieDisclaumerBackgroundColor);
+  color: var(--cookieDisclaumerColor);
+  font-size: var(--cookieDisclaumerFontSize);
+  opacity: 0;
+  padding: var(--cookieDisclaumerPadding);
+  transform: translateY(100%);
+  transition: opacity 0.3s, transform 0.5s;
+}
+
+.cookie-disclaimer.is-active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.cookie-disclaimer :first-child {
+  margin-top: 0;
+}
+
+.cookie-disclaimer :last-child {
+  margin-bottom: 0;
+}
