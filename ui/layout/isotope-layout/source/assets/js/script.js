@@ -1,16 +1,13 @@
 import imagesLoaded from 'imagesloaded';
 import Isotope      from 'isotope-layout';
 
-const isotopeFilterButtons = document.querySelectorAll('.js-isotope-filter-button');
-const isotopeSortButtons   = document.querySelectorAll('.js-isotope-sort-button');
-
 imagesLoaded('.js-isotope', () => {
   let isotope;
   let filterValue = localStorage.getItem('isotope-filter');
   let sortValue   = localStorage.getItem('isotope-sort');
   let sortData = {};
 
-  Array.from(isotopeFilterButtons).forEach(isotopeFilterButton => {
+  Array.from(document.querySelectorAll('.js-isotope-filter-button')).forEach(isotopeFilterButton => {
     isotopeFilterButton.addEventListener('click', () => {
       filterValue = isotopeFilterButton.getAttribute('data-filter');
 
@@ -23,7 +20,7 @@ imagesLoaded('.js-isotope', () => {
     });
   });
 
-  Array.from(isotopeSortButtons).forEach(isotopeSortButton => {
+  Array.from(document.querySelectorAll('.js-isotope-sort-button')).forEach(isotopeSortButton => {
     const isotopeSortButtonData = isotopeSortButton.getAttribute('data-sort');
 
     sortData[isotopeSortButtonData] = `.${isotopeSortButtonData}`;
