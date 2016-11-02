@@ -6,7 +6,6 @@ class GoogleMaps {
     this.init(options);
 
     this.onResize = this.onResize.bind(this);
-
     this.addEventListeners();
   }
 
@@ -55,7 +54,6 @@ class GoogleMaps {
 
   onResize() {
     const { map } = this;
-
     const center = map.getCenter();
 
     google.maps.event.trigger(map, 'resize');
