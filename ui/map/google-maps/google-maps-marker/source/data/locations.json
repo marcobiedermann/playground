@@ -47,7 +47,7 @@
   {
     "icon": "content/images/europe/bosniaherzegowina.png",
     "infoWindow": {
-      "content": "<h2>Bosnia</h2> and Herzegovina"
+      "content": "<h2>Bosnia and Herzegovina</h2>"
     },
     "lat": 43.9159,
     "lng": 17.6791,
@@ -83,7 +83,7 @@
   {
     "icon": "content/images/europe/czechrepublic.png",
     "infoWindow": {
-      "content": "<h2>Czech</h2> Republic"
+      "content": "<h2>Czech Republic</h2>"
     },
     "lat": 49.8175,
     "lng": 15.4730,
@@ -335,7 +335,7 @@
   {
     "icon": "content/images/europe/sanmarino.png",
     "infoWindow": {
-      "content": "<h2>San</h2> Marino"
+      "content": "<h2>San Marino</h2>"
     },
     "lat": 43.9424,
     "lng": 12.4578,
