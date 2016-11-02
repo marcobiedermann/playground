@@ -4,47 +4,48 @@ import Isotope      from 'isotope-layout';
 const isotopeFilterButtons = document.querySelectorAll('.js-isotope-filter-button');
 const isotopeSortButtons   = document.querySelectorAll('.js-isotope-sort-button');
 
-let isotope;
-let filterValue = localStorage.getItem('isotope-filter');
-let sortValue   = localStorage.getItem('isotope-sort');
-
 imagesLoaded('.js-isotope', () => {
+  let isotope;
+  let filterValue = localStorage.getItem('isotope-filter');
+  let sortValue   = localStorage.getItem('isotope-sort');
+  let sortData = {};
+
+  Array.from(isotopeFilterButtons).forEach(isotopeFilterButton => {
+    isotopeFilterButton.addEventListener('click', () => {
+      filterValue = isotopeFilterButton.getAttribute('data-filter');
+
+      localStorage.setItem('isotope-filter', filterValue);
+
+      isotope.arrange({
+        filter: filterValue
+      });
+
+    });
+  });
+
+  Array.from(isotopeSortButtons).forEach(isotopeSortButton => {
+    const isotopeSortButtonData = isotopeSortButton.getAttribute('data-sort');
+
+    sortData[isotopeSortButtonData] = `.${isotopeSortButtonData}`;
+
+    isotopeSortButton.addEventListener('click', () => {
+      sortValue = isotopeSortButtonData;
+
+      localStorage.setItem('isotope-sort', sortValue);
+
+      isotope.arrange({
+        sortBy: sortValue
+      });
+
+    });
+
+  });
 
   isotope = new Isotope(document.querySelector('.js-isotope-layout'), {
-    itemSelector: '.js-isotope-item',
     filter      : filterValue,
-    sortBy      : sortValue,
-    getSortData : {
-      'js-isotope-sort-age' : '.js-isotope-sort-age',
-      'js-isotope-sort-name': '.js-isotope-sort-name'
-    }
-  });
-
-});
-
-Array.from(isotopeFilterButtons).forEach(isotopeFilterButton => {
-  isotopeFilterButton.addEventListener('click', () => {
-    filterValue = isotopeFilterButton.getAttribute('data-filter');
-
-    localStorage.setItem('isotope-filter', filterValue)
-
-    isotope.arrange({
-      filter: filterValue
-    });
-
-  });
-});
-
-Array.from(isotopeSortButtons).forEach(isotopeSortButton => {
-  isotopeSortButton.addEventListener('click', () => {
-    sortValue = isotopeSortButton.getAttribute('data-sort');
-
-    localStorage.setItem('isotope-sort', sortValue)
-
-    isotope.arrange({
-      sortBy: sortValue
-    });
-
+    getSortData : sortData,
+    itemSelector: '.js-isotope-item',
+    sortBy      : sortValue
   });
 
 });
