@@ -49,7 +49,7 @@ class GoogleMaps {
     });
   }
 
-  renderMarkerClusterer(markerCluster) {
+  renderMarkerClusterer() {
     new MarkerClusterer(this.map, this.markers, {
       imagePath: 'content/images/m'
     });
