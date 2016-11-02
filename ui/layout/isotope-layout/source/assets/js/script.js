@@ -2,7 +2,6 @@ import imagesLoaded from 'imagesloaded';
 import Isotope      from 'isotope-layout';
 
 imagesLoaded('.js-isotope', () => {
-  let isotope;
   let filterValue = localStorage.getItem('isotope-filter');
   let sortValue   = localStorage.getItem('isotope-sort');
   let sortData = {};
@@ -38,7 +37,7 @@ imagesLoaded('.js-isotope', () => {
 
   });
 
-  isotope = new Isotope(document.querySelector('.js-isotope-layout'), {
+  const isotope = new Isotope(document.querySelector('.js-isotope-layout'), {
     filter      : filterValue,
     getSortData : sortData,
     itemSelector: '.js-isotope-item',
