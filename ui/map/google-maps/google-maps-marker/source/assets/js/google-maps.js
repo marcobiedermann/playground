@@ -23,6 +23,7 @@ class GoogleMaps {
 
   renderMarkers(locations) {
     const { map } = this;
+    const infoWindow = new google.maps.InfoWindow();
 
     this.markers = locations.forEach(location => {
       const marker = new google.maps.Marker({
@@ -36,11 +37,8 @@ class GoogleMaps {
       });
 
       if (location.infoWindow) {
-        const infoWindow = new google.maps.InfoWindow({
-          content: location.infoWindow.content
-        });
-
         google.maps.event.addListener(marker, 'click', () => {
+          infoWindow.setContent(location.infoWindow.content);
           infoWindow.open(map, marker);
         });
       }
