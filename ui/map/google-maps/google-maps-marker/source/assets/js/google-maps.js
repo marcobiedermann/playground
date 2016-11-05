@@ -25,15 +25,9 @@ class GoogleMaps {
     const infoWindow = new google.maps.InfoWindow();
 
     this.markers = locations.map(location => {
-      const marker = new google.maps.Marker({
-        icon: location.icon,
-        map: map,
-        position: {
-          lat: location.lat,
-          lng: location.lng
-        },
-        title: location.title
-      });
+      const marker = new google.maps.Marker(location);
+
+      marker.setMap(location.map);
 
       if (location.infoWindow) {
         google.maps.event.addListener(marker, 'click', () => {
