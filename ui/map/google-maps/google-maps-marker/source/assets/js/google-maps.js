@@ -27,8 +27,6 @@ class GoogleMaps {
     this.markers = locations.map(location => {
       const marker = new google.maps.Marker(location);
 
-      marker.setMap(location.map);
-
       if (location.infoWindow) {
         google.maps.event.addListener(marker, 'click', () => {
           infoWindow.setContent(location.infoWindow.content);
