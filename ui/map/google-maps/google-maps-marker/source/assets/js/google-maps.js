@@ -38,10 +38,8 @@ class GoogleMaps {
     });
   }
 
-  renderMarkerClusterer() {
-    new MarkerClusterer(this.map, this.markers, {
-      imagePath: 'content/images/m'
-    });
+  renderMarkerClusterer(options) {
+    new MarkerClusterer(this.map, this.markers, options);
   }
 
   renderRectangle(options) {

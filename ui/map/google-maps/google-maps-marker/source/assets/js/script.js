@@ -24,7 +24,9 @@ fetch('data/locations.json')
   .then(response => response.json())
   .then(data => {
     googleMaps.renderMarkers(data);
-    googleMaps.renderMarkerClusterer();
+    googleMaps.renderMarkerClusterer({
+      imagePath: 'content/images/m'
+    });
     googleMaps.renderRectangle({
       bounds: new google.maps.LatLngBounds(
         {
