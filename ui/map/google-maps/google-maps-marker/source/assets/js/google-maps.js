@@ -46,6 +46,12 @@ class GoogleMaps {
     });
   }
 
+  renderRectangle(options) {
+    const rectangle = new google.maps.Rectangle(options);
+
+    rectangle.setMap(this.map);
+  }
+
   onResize() {
     const { map } = this;
     const center = map.getCenter();

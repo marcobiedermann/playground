@@ -25,4 +25,18 @@ fetch('data/locations.json')
   .then(data => {
     googleMaps.renderMarkers(data);
     googleMaps.renderMarkerClusterer();
+    googleMaps.renderRectangle({
+      bounds: new google.maps.LatLngBounds(
+        {
+          lat: -90,
+          lng: -180
+        },
+        {
+          lat: 90,
+          lng: 180
+        }
+      ),
+      fillColor: '#000',
+      fillOpacity: 0.3
+    });
   });
