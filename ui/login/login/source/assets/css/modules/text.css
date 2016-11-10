@@ -1,0 +1,13 @@
+:root {
+  --paragraphMarginBottom: 1.5rem;
+  --paragraphMarginTop: 1.5rem;
+}
+
+p {
+  margin-bottom: var(--paragraphMarginBottom);
+  margin-top: var(--paragraphMarginTop);
+}
+
+.text--center {
+  text-align: center;
+}

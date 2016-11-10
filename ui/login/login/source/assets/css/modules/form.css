@@ -1,0 +1,37 @@
+:root {
+  --formFieldMargin: 0.875rem;
+}
+
+input {
+  background-image: none;
+  border: 0;
+  color: inherit;
+  font: inherit;
+  margin: 0;
+  outline: 0;
+  padding: 0;
+  transition: background-color 0.3s;
+}
+
+input[type='submit'] {
+  cursor: pointer;
+}
+
+.form {
+  margin: calc(var(--formFieldMargin) * -1);
+}
+
+.form input[type='password'],
+.form input[type='text'],
+.form input[type='submit'] {
+  width: 100%;
+}
+
+.form__field {
+  display: flex;
+  margin: var(--formFieldMargin);
+}
+
+.form__input {
+  flex: 1;
+}

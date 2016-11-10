@@ -1,0 +1,12 @@
+:root {
+  --iconFill: var(--baseColor);
+}
+
+.icon {
+  display: inline-block;
+  fill: var(--iconFill);
+  font-size: 1rem;
+  height: 1em;
+  vertical-align: middle;
+  width: 1em;
+}
