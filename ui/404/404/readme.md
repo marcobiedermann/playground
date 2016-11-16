@@ -1,4 +1,4 @@
-[![dependencies Status](https://david-dm.org/marcobiedermann/playground/status.svg?path=ui/buttons/buttons)](https://david-dm.org/marcobiedermann/playground?path=ui/buttons/buttons) [![devDependencies Status](https://david-dm.org/marcobiedermann/playground/dev-status.svg?path=ui/buttons/buttons)](https://david-dm.org/marcobiedermann/playground?path=ui/buttons/buttons&type=dev)
+[![dependencies Status](https://david-dm.org/marcobiedermann/playground/status.svg?path=ui/404/404)](https://david-dm.org/marcobiedermann/playground?path=ui/404/404) [![devDependencies Status](https://david-dm.org/marcobiedermann/playground/dev-status.svg?path=ui/404/404)](https://david-dm.org/marcobiedermann/playground?path=ui/404/404&type=dev)
 
 # 404
 
