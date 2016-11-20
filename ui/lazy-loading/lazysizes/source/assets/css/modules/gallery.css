@@ -1,0 +1,17 @@
+:root {
+  --galleryItemGutter: 1.5%;
+}
+
+.gallery {
+  list-style: none;
+  margin: calc(var(--galleryItemGutter) * -1);
+  padding: 0;
+}
+
+.gallery li {
+  margin: var(--galleryItemGutter);
+}
+
+.gallery figure {
+  position: relative;
+}

@@ -1,0 +1,27 @@
+.embed {
+  overflow: hidden;
+  position: relative;
+}
+
+.embed::after {
+  content: '';
+  display: block;
+  height: 0;
+  padding-top: 100%;
+}
+
+.embed--4-3::after {
+  padding-top: calc(100% / (4 / 3));
+}
+
+.embed--16-9::after {
+  padding-top: calc(100% / (16 / 9));
+}
+
+.embed img {
+  bottom: 0;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+}

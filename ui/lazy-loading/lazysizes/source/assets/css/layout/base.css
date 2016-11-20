@@ -1,0 +1,10 @@
+:root {
+  --bodyFontFamily: sans-serif;
+  --bodyLineHeight: 1.5;
+}
+
+body {
+  font-family: var(--bodyFontFamily);
+  line-height: var(--bodyLineHeight);
+  margin: 0;
+}
