@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html class="no-js" lang="en">
 
   <head>
     <meta charset="utf-8">
@@ -7,6 +7,13 @@
     <title>lazysizes</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <script>
+      (function(documentElement) {
+        documentElement.className = documentElement.className.replace(/\bno-js\b/, 'js')
+      }(document.documentElement));
+    </script>
+
     <link href="assets/css/style.css" rel="stylesheet">
   </head>
 
@@ -21,13 +28,13 @@
 
             <picture>
               <source data-srcset="content/images/image-01.webp" type="image/webp">
-              <img data-src="content/images/image-01.jpg" width="768" height="576" class="lazyload">
+              <img data-src="content/images/image-01.jpg" width="768" height="576" alt="Image Alt Tag" class="lazyload">
             </picture>
 
             <noscript>
               <picture>
                 <source srcset="content/images/image-01.webp" type="image/webp">
-                <img src="content/images/image-01.jpg" width="768" height="576">
+                <img src="content/images/image-01.jpg" width="768" height="576" alt="Image Alt Tag">
               </picture>
             </noscript>
 
@@ -39,13 +46,13 @@
 
             <picture>
               <source data-srcset="content/images/image-02.webp" type="image/webp">
-              <img data-src="content/images/image-02.jpg" width="768" height="576" class="lazyload">
+              <img data-src="content/images/image-02.jpg" width="768" height="576" alt="Image Alt Tag" class="lazyload">
             </picture>
 
             <noscript>
               <picture>
                 <source srcset="content/images/image-02.webp" type="image/webp">
-                <img src="content/images/image-02.jpg" width="768" height="576">
+                <img src="content/images/image-02.jpg" width="768" height="576" alt="Image Alt Tag">
               </picture>
             </noscript>
 
@@ -57,13 +64,13 @@
 
             <picture>
               <source data-srcset="content/images/image-03.webp" type="image/webp">
-              <img data-src="content/images/image-03.jpg" width="768" height="576" class="lazyload">
+              <img data-src="content/images/image-03.jpg" width="768" height="576" alt="Image Alt Tag" class="lazyload">
             </picture>
 
             <noscript>
               <picture>
                 <source srcset="content/images/image-03.webp" type="image/webp">
-                <img src="content/images/image-03.jpg" width="768" height="576">
+                <img src="content/images/image-03.jpg" width="768" height="576" alt="Image Alt Tag">
               </picture>
             </noscript>
 
@@ -75,13 +82,13 @@
 
             <picture>
               <source data-srcset="content/images/image-04.webp" type="image/webp">
-              <img data-src="content/images/image-04.jpg" width="768" height="576" class="lazyload">
+              <img data-src="content/images/image-04.jpg" width="768" height="576" alt="Image Alt Tag" class="lazyload">
             </picture>
 
             <noscript>
               <picture>
                 <source srcset="content/images/image-04.webp" type="image/webp">
-                <img src="content/images/image-04.jpg" width="768" height="576">
+                <img src="content/images/image-04.jpg" width="768" height="576" alt="Image Alt Tag">
               </picture>
             </noscript>
 
@@ -93,13 +100,13 @@
 
             <picture>
               <source data-srcset="content/images/image-05.webp" type="image/webp">
-              <img data-src="content/images/image-05.jpg" width="768" height="576" class="lazyload">
+              <img data-src="content/images/image-05.jpg" width="768" height="576" alt="Image Alt Tag" class="lazyload">
             </picture>
 
             <noscript>
               <picture>
                 <source srcset="content/images/image-05.webp" type="image/webp">
-                <img src="content/images/image-05.jpg" width="768" height="576">
+                <img src="content/images/image-05.jpg" width="768" height="576" alt="Image Alt Tag">
               </picture>
             </noscript>
 
@@ -111,13 +118,13 @@
 
             <picture>
               <source data-srcset="content/images/image-06.webp" type="image/webp">
-              <img data-src="content/images/image-06.jpg" width="768" height="576" class="lazyload">
+              <img data-src="content/images/image-06.jpg" width="768" height="576" alt="Image Alt Tag" class="lazyload">
             </picture>
 
             <noscript>
               <picture>
                 <source srcset="content/images/image-06.webp" type="image/webp">
-                <img src="content/images/image-06.jpg" width="768" height="576">
+                <img src="content/images/image-06.jpg" width="768" height="576" alt="Image Alt Tag">
               </picture>
             </noscript>
 
@@ -129,13 +136,13 @@
 
             <picture>
               <source data-srcset="content/images/image-07.webp" type="image/webp">
-              <img data-src="content/images/image-07.jpg" width="768" height="576" class="lazyload">
+              <img data-src="content/images/image-07.jpg" width="768" height="576" alt="Image Alt Tag" class="lazyload">
             </picture>
 
             <noscript>
               <picture>
                 <source srcset="content/images/image-07.webp" type="image/webp">
-                <img src="content/images/image-07.jpg" width="768" height="576">
+                <img src="content/images/image-07.jpg" width="768" height="576" alt="Image Alt Tag">
               </picture>
             </noscript>
 
@@ -147,13 +154,13 @@
 
             <picture>
               <source data-srcset="content/images/image-08.webp" type="image/webp">
-              <img data-src="content/images/image-08.jpg" width="768" height="576" class="lazyload">
+              <img data-src="content/images/image-08.jpg" width="768" height="576" alt="Image Alt Tag" class="lazyload">
             </picture>
 
             <noscript>
               <picture>
                 <source srcset="content/images/image-08.webp" type="image/webp">
-                <img src="content/images/image-08.jpg" width="768" height="576">
+                <img src="content/images/image-08.jpg" width="768" height="576" alt="Image Alt Tag">
               </picture>
             </noscript>
 
@@ -165,13 +172,13 @@
 
             <picture>
               <source data-srcset="content/images/image-09.webp" type="image/webp">
-              <img data-src="content/images/image-09.jpg" width="768" height="576" class="lazyload">
+              <img data-src="content/images/image-09.jpg" width="768" height="576" alt="Image Alt Tag" class="lazyload">
             </picture>
 
             <noscript>
               <picture>
                 <source srcset="content/images/image-09.webp" type="image/webp">
-                <img src="content/images/image-09.jpg" width="768" height="576">
+                <img src="content/images/image-09.jpg" width="768" height="576" alt="Image Alt Tag">
               </picture>
             </noscript>
 
@@ -183,13 +190,13 @@
 
             <picture>
               <source data-srcset="content/images/image-10.webp" type="image/webp">
-              <img data-src="content/images/image-10.jpg" width="768" height="576" class="lazyload">
+              <img data-src="content/images/image-10.jpg" width="768" height="576" alt="Image Alt Tag" class="lazyload">
             </picture>
 
             <noscript>
               <picture>
                 <source srcset="content/images/image-10.webp" type="image/webp">
-                <img src="content/images/image-10.jpg" width="768" height="576">
+                <img src="content/images/image-10.jpg" width="768" height="576" alt="Image Alt Tag">
               </picture>
             </noscript>
 
@@ -201,13 +208,13 @@
 
             <picture>
               <source data-srcset="content/images/image-11.webp" type="image/webp">
-              <img data-src="content/images/image-11.jpg" width="768" height="576" class="lazyload">
+              <img data-src="content/images/image-11.jpg" width="768" height="576" alt="Image Alt Tag" class="lazyload">
             </picture>
 
             <noscript>
               <picture>
                 <source srcset="content/images/image-11.webp" type="image/webp">
-                <img src="content/images/image-11.jpg" width="768" height="576">
+                <img src="content/images/image-11.jpg" width="768" height="576" alt="Image Alt Tag">
               </picture>
             </noscript>
 
@@ -219,13 +226,13 @@
 
             <picture>
               <source data-srcset="content/images/image-12.webp" type="image/webp">
-              <img data-src="content/images/image-12.jpg" width="768" height="576" class="lazyload">
+              <img data-src="content/images/image-12.jpg" width="768" height="576" alt="Image Alt Tag" class="lazyload">
             </picture>
 
             <noscript>
               <picture>
                 <source srcset="content/images/image-12.webp" type="image/webp">
-                <img src="content/images/image-12.jpg" width="768" height="576">
+                <img src="content/images/image-12.jpg" width="768" height="576" alt="Image Alt Tag">
               </picture>
             </noscript>
 
@@ -237,13 +244,13 @@
 
             <picture>
               <source data-srcset="content/images/image-13.webp" type="image/webp">
-              <img data-src="content/images/image-13.jpg" width="768" height="576" class="lazyload">
+              <img data-src="content/images/image-13.jpg" width="768" height="576" alt="Image Alt Tag" class="lazyload">
             </picture>
 
             <noscript>
               <picture>
                 <source srcset="content/images/image-13.webp" type="image/webp">
-                <img src="content/images/image-13.jpg" width="768" height="576">
+                <img src="content/images/image-13.jpg" width="768" height="576" alt="Image Alt Tag">
               </picture>
             </noscript>
 
@@ -255,13 +262,13 @@
 
             <picture>
               <source data-srcset="content/images/image-14.webp" type="image/webp">
-              <img data-src="content/images/image-14.jpg" width="768" height="576" class="lazyload">
+              <img data-src="content/images/image-14.jpg" width="768" height="576" alt="Image Alt Tag" class="lazyload">
             </picture>
 
             <noscript>
               <picture>
                 <source srcset="content/images/image-14.webp" type="image/webp">
-                <img src="content/images/image-14.jpg" width="768" height="576">
+                <img src="content/images/image-14.jpg" width="768" height="576" alt="Image Alt Tag">
               </picture>
             </noscript>
 
@@ -273,13 +280,13 @@
 
             <picture>
               <source data-srcset="content/images/image-15.webp" type="image/webp">
-              <img data-src="content/images/image-15.jpg" width="768" height="576" class="lazyload">
+              <img data-src="content/images/image-15.jpg" width="768" height="576" alt="Image Alt Tag" class="lazyload">
             </picture>
 
             <noscript>
               <picture>
                 <source srcset="content/images/image-15.webp" type="image/webp">
-                <img src="content/images/image-15.jpg" width="768" height="576">
+                <img src="content/images/image-15.jpg" width="768" height="576" alt="Image Alt Tag">
               </picture>
             </noscript>
 
