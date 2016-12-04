@@ -17,6 +17,6 @@
     "gulp-sourcemaps": "^2.2.1",
     "gulp-svgmin": "^1.2.3",
     "postcss-cssnext": "^2.9.0",
-    "postcss-import": "^8.2.0"
+    "postcss-import": "^9.0.0"
   }
 }
