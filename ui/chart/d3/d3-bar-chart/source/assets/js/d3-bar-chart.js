@@ -15,7 +15,9 @@ const defaults = {
   barPadding: 10,
   ease: d3.easeLinear,
   nice: true,
-  type: 'rounded'
+  type: 'rounded',
+  mouseover: () => {},
+  mouseleave: () => {}
 };
 
 class BarChart {
@@ -137,7 +139,9 @@ class BarChart {
       .attr('rx', type === 'rounded' ? barWidth / 2 : 0)
       .attr('ry', type === 'rounded' ? barWidth / 2 : 0)
       .attr('width', barWidth)
-      .attr('height', data => innerHeight - scaleY(data.value));
+      .attr('height', data => innerHeight - scaleY(data.value))
+      .on('mouseover', data => this.mouseover(data))
+      .on('mouseleave', data => this.mouseleave(data));
 
     bar
       .exit()
