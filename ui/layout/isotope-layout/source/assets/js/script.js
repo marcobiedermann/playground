@@ -34,15 +34,31 @@ imagesLoaded('.js-isotope', () => {
   }
 
   isotopeFilterButtons.forEach(isotopeFilterButton => {
+    if (filterValue) {
+      isotopeFilterButton.classList.remove('is-active');
+    }
+
     isotopeFilterButton.addEventListener('click', isotopeFilter);
   });
 
   itotopeSortButtons.forEach(isotopeSortButton => {
     const isotopeSortButtonData = isotopeSortButton.getAttribute('data-sort');
 
+    if (sortValue) {
+      isotopeSortButton.classList.remove('is-active')
+    }
+
     sortData[isotopeSortButtonData] = `.${isotopeSortButtonData}`;
     isotopeSortButton.addEventListener('click', isotopeSort);
   });
+
+  if (filterValue) {
+    document.querySelector(`.js-isotope-filter-button[data-filter='${filterValue}']`).classList.add('is-active');
+  }
+
+  if (sortValue) {
+    document.querySelector(`.js-isotope-sort-button[data-sort='${sortValue}']`).classList.add('is-active');
+  }
 
   const isotope = new Isotope(document.querySelector('.js-isotope-layout'), {
     filter      : filterValue,

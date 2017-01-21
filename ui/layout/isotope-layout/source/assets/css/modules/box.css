@@ -5,13 +5,9 @@
 }
 
 .box--red {
-  background-color: red;
-}
-
-.box--green {
-  background-color: green;
+  background-color: #c0392b;
 }
 
 .box--blue {
-  background-color: blue;
+  background-color: #2980b9;
 }

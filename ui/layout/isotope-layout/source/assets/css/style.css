@@ -3,5 +3,6 @@
 @import 'layout/base.css';
 
 @import 'modules/box.css';
+@import 'modules/button.css';
 
 @import 'vendor/isotope.css';

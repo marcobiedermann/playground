@@ -1,5 +1,5 @@
 :root {
-  --isotopeGutter: 3%;
+  --isotopeGutter: 2%;
 }
 
 .isotope__filter,
@@ -11,17 +11,38 @@
   padding: 0;
 }
 
-.isotope__button.is-active {
-  background-color: green;
-}
-
 .isotope__layout {
   list-style: none;
   margin: calc(var(--isotopeGutter) / -2);
+  overflow: hidden;
   padding: 0;
 }
 
 .isotope__item {
   margin: calc(var(--isotopeGutter) / 2);
-  width: calc(100% / 3 - var(--isotopeGutter));
+  width: calc(100% / 1 - var(--isotopeGutter));
+}
+
+@media (min-width: 24em) {
+
+  .isotope__item {
+    width: calc(100% / 2 - var(--isotopeGutter));
+  }
+
+}
+
+@media (min-width: 42em) {
+
+  .isotope__item {
+    width: calc(100% / 3 - var(--isotopeGutter));
+  }
+
+}
+
+@media (min-width: 56em) {
+
+  .isotope__item {
+    width: calc(100% / 4 - var(--isotopeGutter));
+  }
+
 }
