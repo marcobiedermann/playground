@@ -5,8 +5,8 @@
   "author": "Marco Biedermann",
   "license": "ISC",
   "devDependencies": {
-    "babel-preset-latest": "^6.16.0",
-    "babel-register": "^6.18.0",
+    "babel-preset-latest": "^6.22.0",
+    "babel-register": "^6.22.0",
     "babelify": "^7.3.0",
     "browserify": "^13.3.0",
     "debowerify": "^1.5.0",
@@ -15,7 +15,7 @@
     "gulp-htmlmin": "^3.0.0",
     "gulp-htmlmin": "^3.0.0",
     "gulp-imagemin": "^3.1.1",
-    "gulp-postcss": "^6.2.0",
+    "gulp-postcss": "^6.3.0",
     "gulp-sourcemaps": "^2.4.0",
     "gulp-svgmin": "^1.2.3",
     "gulp-svgstore": "^6.0.0",
@@ -28,7 +28,7 @@
     "vinyl-source-stream": "^1.1.0"
   },
   "dependencies": {
-    "d3": "^4.4.1",
+    "d3": "^4.4.3",
     "imagesloaded": "^4.1.1",
     "isotope-layout": "^3.0.1",
     "jquery": "^3.1.1",
