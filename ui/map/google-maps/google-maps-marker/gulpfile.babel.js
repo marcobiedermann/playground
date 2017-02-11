@@ -4,6 +4,7 @@ import gulp              from 'gulp';
 import gulpCleanCss      from 'gulp-clean-css';
 import gulpHtmlmin       from 'gulp-htmlmin';
 import gulpImagemin      from 'gulp-imagemin';
+import gulpJsonminify    from 'gulp-jsonminify';
 import gulpPostcss       from 'gulp-postcss';
 import gulpSourcemaps    from 'gulp-sourcemaps';
 import gulpUglify        from 'gulp-uglify';
@@ -32,11 +33,6 @@ gulp.task('css', () => {
     .pipe(gulpCleanCss())
     .pipe(gulpSourcemaps.write('.'))
     .pipe(gulp.dest(`${dirs.dest}/assets/css`));
-});
-
-gulp.task('data', () => {
-  return gulp.src(`${dirs.source}/data/**/*.json`)
-    .pipe(gulp.dest(`${dirs.dest}/data`));
 });
 
 gulp.task('html', () => {
@@ -97,6 +93,12 @@ gulp.task('js', () => {
     .pipe(gulp.dest(`${dirs.dest}/assets/js`));
 });
 
+gulp.task('json', () => {
+  return gulp.src(`${dirs.source}/**/*.json`)
+    .pipe(gulpJsonminify())
+    .pipe(gulp.dest(`${dirs.dest}`));
+})
+
 gulp.task('lint:css', () => {
   return gulp.src(`${dirs.source}/assets/css/**/*.css`)
     .pipe(gulpPostcss([
@@ -109,7 +111,7 @@ gulp.task('watch', () => {
   gulp.watch(`${dirs.source}/assets/css/**/*.css`, ['lint:css', 'css']);
   gulp.watch(`${dirs.source}/assets/js/**/*.js`, ['js']);
   gulp.watch(`${dirs.source}/content/images/**/*.{gif,ico,jpg,jpeg,png}`, ['images:content']);
-  gulp.watch(`${dirs.source}/data/**/*.json`, ['data']);
+  gulp.watch(`${dirs.source}/**/*.json`, ['json']);
 });
 
 gulp.task('default', [
@@ -118,7 +120,7 @@ gulp.task('default', [
   'html',
   'js',
   'images:content',
-  'data',
+  'json',
   'watch'
 ]);
 
@@ -132,5 +134,5 @@ gulp.task('build', [
   'html',
   'js',
   'images:content',
-  'data'
+  'json'
 ]);
