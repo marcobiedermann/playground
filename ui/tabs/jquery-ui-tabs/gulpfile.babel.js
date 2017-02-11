@@ -1,5 +1,6 @@
 import babelify          from 'babelify';
 import browserify        from 'browserify';
+import deamdify          from 'deamdify';
 import gulp              from 'gulp';
 import gulpCleanCss      from 'gulp-clean-css';
 import gulpHtmlmin       from 'gulp-htmlmin';
@@ -56,7 +57,7 @@ gulp.task('html', () => {
       removeAttributeQuotes        : true,
       removeComments               : true,
       removeEmptyAttributes        : true,
-      removeEmptyElements          : true,
+      removeEmptyElements          : false,
       removeOptionalTags           : true,
       removeRedundantAttributes    : true,
       removeScriptTypeAttributes   : true,
@@ -80,6 +81,7 @@ gulp.task('lint:css', () => {
 gulp.task('js', () => {
   const b = browserify({
     entries: `${dirs.source}/assets/js/script.js`,
+    globalTransform: [deamdify],
     transform: [babelify]
   });
 
