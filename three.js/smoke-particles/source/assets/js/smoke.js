@@ -2,11 +2,13 @@ import * as THREE from 'three';
 
 class Smoke {
 
-  constructor(options) {
+  constructor(element, options) {
     const defaults = {
       width: window.innerWidth,
       height: window.innerHeight
     };
+
+    this.element = element;
 
     Object.assign(this, options, defaults);
     this.onResize = this.onResize.bind(this);
@@ -16,11 +18,13 @@ class Smoke {
   }
 
   init() {
-    const { width, height } = this;
+    const { element, width, height } = this;
 
     this.clock = new THREE.Clock();
 
-    const renderer = this.renderer = new THREE.WebGLRenderer();
+    const renderer = this.renderer = new THREE.WebGLRenderer({
+      canvas: element
+    });
 
     renderer.setSize(width, height);
 
@@ -39,8 +43,6 @@ class Smoke {
     this.addLights();
     this.addParticles();
     this.addBackground();
-
-    document.body.appendChild(renderer.domElement);
   }
 
   evolveSmoke(delta) {
