@@ -508,7 +508,7 @@
   {
     "icon": "content/images/europe/unitedkingdom.png",
     "infoWindow": {
-      "content": "<h2>United</h2> Kingdom"
+      "content": "<h2>United Kingdom</h2>"
     },
     "position": {
       "lat": 51.509865,
