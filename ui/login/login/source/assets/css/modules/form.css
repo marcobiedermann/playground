@@ -3,7 +3,7 @@
 }
 
 input {
-  background-image: none;
+  background: none;
   border: 0;
   color: inherit;
   font: inherit;
@@ -14,6 +14,7 @@ input {
 }
 
 input[type='submit'] {
+  appearance: button;
   cursor: pointer;
 }
 
