@@ -11,7 +11,7 @@
   "license": "ISC",
   "devDependencies": {
     "babel-preset-latest": "^6.22.0",
-    "babel-register": "^6.22.0",
+    "babel-register": "^6.23.0",
     "gulp": "^3.9.1",
     "gulp-clean-css": "^3.0.2",
     "gulp-htmlmin": "^3.0.0",
