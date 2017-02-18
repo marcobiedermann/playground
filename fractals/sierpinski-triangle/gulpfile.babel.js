@@ -38,7 +38,7 @@ gulp.task('html', () => {
     .pipe(gulpHtmlmin({
       caseSensitive                : false,
       collapseBooleanAttributes    : true,
-      collapseInlineTagWhitespace  : true,
+      collapseInlineTagWhitespace  : false,
       collapseWhitespace           : true,
       conservativeCollapse         : false,
       decodeEntities               : false,
@@ -58,7 +58,7 @@ gulp.task('html', () => {
       removeEmptyAttributes        : true,
       removeEmptyElements          : false,
       removeOptionalTags           : true,
-      removeRedundantAttributes    : true,
+      removeRedundantAttributes    : false,
       removeScriptTypeAttributes   : true,
       removeStyleLinkTypeAttributes: true,
       removeTagWhitespace          : true,
