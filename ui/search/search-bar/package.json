@@ -13,12 +13,12 @@
     "babel-preset-latest": "^6.22.0",
     "babel-register": "^6.23.0",
     "gulp": "^3.9.1",
-    "gulp-clean-css": "^3.0.2",
+    "gulp-clean-css": "^3.0.3",
     "gulp-htmlmin": "^3.0.0",
     "gulp-postcss": "^6.3.0",
     "gulp-sourcemaps": "^2.4.1",
     "postcss-cssnext": "^2.9.0",
     "postcss-import": "^9.1.0",
-    "stylelint": "^7.8.0"
+    "stylelint": "^7.9.0"
   }
 }
