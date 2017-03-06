@@ -35,7 +35,7 @@
     "jquery-ui-browserify": "^1.11.0-pre-seelio",
     "lazysizes": "^3.0.0",
     "masonry-layout": "^4.1.1",
-    "svg4everybody": "^2.1.0",
+    "svg4everybody": "^2.1.5",
     "three": "^0.84.0"
   }
 }
