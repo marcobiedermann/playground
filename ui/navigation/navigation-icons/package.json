@@ -29,6 +29,6 @@
     "vinyl-source-stream": "^1.1.0"
   },
   "dependencies": {
-    "svg4everybody": "^2.1.0"
+    "svg4everybody": "^2.1.7"
   }
 }
