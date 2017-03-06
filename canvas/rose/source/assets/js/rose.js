@@ -7,7 +7,7 @@ class Rose {
       n: 5,
       d: 8,
       amplitude: 200,
-      step: 0.1
+      nodes: 500
     };
 
     this.element = element;
@@ -31,13 +31,13 @@ class Rose {
   }
 
   render(options) {
-    const { context, n, d, amplitude, step } = Object.assign(this, options);
+    const { context, n, d, amplitude, nodes } = Object.assign(this, options);
 
     const k = n / d;
 
     context.beginPath();
 
-    for (let theta = 0; theta < Math.PI * d * 2; theta += step) {
+    for (let theta = 0; theta < 2 * Math.PI * d; theta += 2 * Math.PI / nodes) {
       const x = amplitude * Math.cos(k * theta) * Math.cos(theta);
       const y = amplitude * Math.cos(k * theta) * Math.sin(theta);
 
