@@ -33,7 +33,7 @@
     "isotope-layout": "^3.0.2",
     "jquery": "^3.1.1",
     "jquery-ui-browserify": "^1.11.0-pre-seelio",
-    "lazysizes": "^2.0.7",
+    "lazysizes": "^3.0.0",
     "masonry-layout": "^4.1.1",
     "svg4everybody": "^2.1.0",
     "three": "^0.84.0"
