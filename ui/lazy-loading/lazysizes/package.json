@@ -29,6 +29,6 @@
     "vinyl-source-stream": "^1.1.0"
   },
   "dependencies": {
-    "lazysizes": "^2.0.7"
+    "lazysizes": "^3.0.0"
   }
 }
