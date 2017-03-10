@@ -28,7 +28,7 @@
     "vinyl-source-stream": "^1.1.0"
   },
   "dependencies": {
-    "d3": "^4.7.1",
+    "d3": "^4.7.2",
     "imagesloaded": "^4.1.1",
     "isotope-layout": "^3.0.2",
     "jquery": "^3.1.1",
