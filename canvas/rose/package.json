@@ -24,5 +24,8 @@
     "stylelint": "^7.9.0",
     "vinyl-buffer": "^1.0.0",
     "vinyl-source-stream": "^1.1.0"
+  },
+  "dependencies": {
+    "dat.gui": "^0.6.1"
   }
 }

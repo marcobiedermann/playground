@@ -11,34 +11,12 @@
     <link href="assets/css/style.css" rel="stylesheet">
   </head>
 
-  <body class="align">
+  <body>
 
-    <div class="grid">
+    <canvas class="js-rose"></canvas>
 
-      <canvas class="js-rose"></canvas>
-
-      <form action="" class="form js-form">
-
-        <div class="form__field">
-          <label for="form-n">n = 5</label>
-          <input type="range" id="form-n" value="5" min="1" max="10" step="1" name="n">
-        </div>
-
-        <div class="form__field">
-          <label for="form-d">d = 5</label>
-          <input type="range" id="form-d" value="5" min="1" max="10" step="1" name="d">
-        </div>
-
-        <div class="form__field">
-          <label for="form-nodes">nodes = 500</label>
-          <input type="range" id="form-nodes" value="50" min="1" max="100" step="1" name="nodes">
-        </div>
-
-      </form>
-
-    </div>
-
-    <script src="assets/js/script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dat-gui/0.6.5/dat.gui.js"></script>
+    <script src="assets/js/script.js" async></script>
 
   </body>
 
