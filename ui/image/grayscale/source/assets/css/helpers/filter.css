@@ -1,0 +1,4 @@
+.filter--grayscale {
+  filter: url('#grayscale');
+  filter: grayscale(1);
+}

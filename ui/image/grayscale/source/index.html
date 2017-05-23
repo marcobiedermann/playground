@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <title>Grayscale</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+  </head>
+
+  <body>
+
+    <picture>
+      <source srcset="content/images/image.webp" type="image/webp">
+      <img src="content/images/image.jpg" class="filter--grayscale">
+    </picture>
+
+    <svg width="0" height="0">
+      <filter id="grayscale">
+        <feColorMatrix type="saturate" values="0" />
+     </filter>
+    </svg>
+
+  </body>
+</html>
