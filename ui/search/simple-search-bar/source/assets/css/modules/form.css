@@ -1,0 +1,39 @@
+::placeholder {
+  color: #777;
+}
+
+input {
+  background: none;
+  border: 0;
+  color: #777;
+  font: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+.form__field {
+  align-items: center;
+  background-color: #343434;
+  border-radius: 0.125em;
+  box-shadow: inset 1px 1px 1px #242424, inset -1px -1px 1px #565656;
+  color: #aaa;
+  display: flex;
+}
+
+.form--search input[type='search'] {
+  flex-grow: 1;
+  padding-bottom: 0.75em;
+  padding-right: 0.75em;
+  padding-top: 0.75em;
+}
+
+.form--search input[type='submit'] {
+  background-image: url('../images/magnifier.svg');
+  background-position: 50%;
+  background-repeat: no-repeat;
+  background-size: 1.5em;
+  order: -1;
+  padding: 0.75em;
+  text-indent: -999px;
+  width: 3em;
+}
