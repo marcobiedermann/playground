@@ -1,7 +1,9 @@
+@import 'helpers/align.css';
 @import 'helpers/grid.css';
 
 @import 'layout/base.css';
 
-@import 'modules/box.css';
+@import 'modules/figure.css';
+@import 'modules/image.css';
 
 @import 'vendor/masonry.css';
