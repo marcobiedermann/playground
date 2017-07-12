@@ -1,5 +1,5 @@
-[![dependencies Status](https://david-dm.org/marcobiedermann/playground/status.svg?path=fractals/barnsley-fern)](https://david-dm.org/marcobiedermann/playground?path=fractals/barnsley-fern) [![devDependencies Status](https://david-dm.org/marcobiedermann/playground/dev-status.svg?path=fractals/barnsley-fern)](https://david-dm.org/marcobiedermann/playground?path=fractals/barnsley-fern&type=dev)
+[![dependencies Status](https://david-dm.org/marcobiedermann/playground/status.svg?path=ui/datepicker/jquery-ui-datepicker)](https://david-dm.org/marcobiedermann/playground?path=ui/datepicker/jquery-ui-datepicker) [![devDependencies Status](https://david-dm.org/marcobiedermann/playground/dev-status.svg?path=ui/datepicker/jquery-ui-datepicker)](https://david-dm.org/marcobiedermann/playground?path=ui/datepicker/jquery-ui-datepicker&type=dev)
 
-# Barnsley Fern
+# jQuery UI Datepicker
 
-[Demo on Codepen](http://codepen.io/marcobiedermann/pen/JRWqLd)
+[Demo on Codepen](http://codepen.io/marcobiedermann/pen/mwaKxL)
