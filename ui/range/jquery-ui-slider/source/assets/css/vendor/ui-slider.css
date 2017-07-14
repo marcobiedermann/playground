@@ -1,0 +1,54 @@
+:root {
+  --sliderHeight: 0.5em;
+
+  --sliderRangeBackgroundColor: #ff3233;
+
+  --sliderHandleSize: 1.75em;
+  --sliderHandleWidth: var(--sliderHandleSize);
+  --sliderHandleHeight: var(--sliderHandleSize);
+}
+
+.ui-slider {
+  border-color: #e7e7e7;
+  border-radius: 999px;
+  border-style: solid;
+  border-width: 0.0625em;
+  margin: 0.625em;
+  position: relative;
+}
+
+.ui-slider-horizontal {
+  height: var(--sliderHeight);
+}
+
+.ui-slider-vertical {
+  height: 200px;
+  width: var(--sliderHeight);
+}
+
+.ui-slider-range {
+  background-color: var(--sliderRangeBackgroundColor);
+  height: 100%;
+  position: absolute;
+  width: 100%;
+}
+
+.ui-slider-handle {
+  background-color: #fff;
+  border-radius: 50%;
+  box-shadow: 0 0 0.5em rgba(0, 0, 0, 0.125);
+  height: var(--sliderHandleHeight);
+  outline: 0;
+  position: absolute;
+  width: var(--sliderHandleWidth);
+}
+
+.ui-slider-horizontal .ui-slider-handle {
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.ui-slider-vertical .ui-slider-handle {
+  left: 50%;
+  transform: translate(-50%, 50%);
+}
