@@ -13,14 +13,14 @@
     "babel-preset-env": "^1.5.1",
     "babel-register": "^6.24.1",
     "gulp": "^3.9.1",
-    "gulp-clean-css": "^3.4.0",
+    "gulp-clean-css": "^3.7.0",
     "gulp-htmlmin": "^3.0.0",
-    "gulp-imagemin": "^3.2.0",
+    "gulp-imagemin": "^3.3.0",
     "gulp-postcss": "^7.0.0",
     "gulp-sourcemaps": "^2.6.0",
     "gulp-webp": "^2.3.0",
-    "postcss-cssnext": "^2.11.0",
+    "postcss-cssnext": "^3.0.2",
     "postcss-import": "^10.0.0",
-    "stylelint": "^7.10.1"
+    "stylelint": "^8.0.0"
   }
 }
