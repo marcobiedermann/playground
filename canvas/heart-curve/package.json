@@ -1,0 +1,31 @@
+{
+  "name": "heart-curve",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "build": "gulp build",
+    "start": "gulp",
+    "test": "gulp lint"
+  },
+  "author": "Marco Biedermann",
+  "license": "ISC",
+  "devDependencies": {
+    "babel-preset-env": "^1.6.0",
+    "babelify": "^7.3.0",
+    "browserify": "^14.4.0",
+    "gulp": "^3.9.1",
+    "gulp-clean-css": "^3.7.0",
+    "gulp-htmlmin": "^3.0.0",
+    "gulp-postcss": "^7.0.0",
+    "gulp-sourcemaps": "^2.6.0",
+    "gulp-uglify": "^3.0.0",
+    "postcss-cssnext": "^3.0.2",
+    "postcss-import": "^10.0.0",
+    "stylelint": "^8.0.0",
+    "vinyl-buffer": "^1.0.0",
+    "vinyl-source-stream": "^1.1.0"
+  },
+  "dependencies": {
+    "dat.gui": "^0.6.1"
+  }
+}
