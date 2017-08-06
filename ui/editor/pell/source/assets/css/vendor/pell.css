@@ -1,0 +1,28 @@
+:root {
+  --pellBorderColor: #e6e6e6;
+  --pellContentHeight: 16em;
+  --pellContentPadding: 0.75em;
+  --pellButtonFontSize: 0.75rem;
+  --pellButtonSize: 3em;
+}
+
+.pell {
+  border: 1px solid var(--pellBorderColor);
+}
+
+.pell-content {
+  height: var(--pellContentHeight);
+  outline: 0;
+  overflow-y: auto;
+  padding: var(--pellContentPadding);
+}
+
+.pell-actionbar {
+  border-bottom: 1px solid var(--pellBorderColor);
+}
+
+.pell-button {
+  height: var(--pellButtonSize);
+  font-size: var(--pellButtonFontSize);
+  width: var(--pellButtonSize);
+}
