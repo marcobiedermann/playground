@@ -1,0 +1,27 @@
+:root {
+  --bricksGutter: 10px;
+}
+
+.bricks {
+  width: auto !important;
+}
+
+.bricks__item {
+  width: calc(100% / 2 - var(--bricksGutter));
+}
+
+@media (min-width: 30em) {
+
+  .bricks__item {
+    width: calc(100% / 3 - var(--bricksGutter));
+  }
+
+}
+
+@media (min-width: 48em) {
+
+  .bricks__item {
+    width: calc(100% / 4 - var(--bricksGutter));
+  }
+
+}
