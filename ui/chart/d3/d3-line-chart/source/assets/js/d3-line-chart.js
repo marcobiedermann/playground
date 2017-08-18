@@ -5,25 +5,25 @@ import { select } from 'd3-selection';
 import { curveBasis, line } from 'd3-shape';
 import { transition } from 'd3-transition';
 
-const defaults = {
-  width : 500,
-  height: 370,
-  margin: {
-    top   : 15,
-    right : 0,
-    bottom: 35,
-    left  : 60
-  },
-  axis: true,
-  axisPadding: 5,
-  xTicks: 5,
-  yTicks: 3,
-  lineCurve: curveBasis
-};
-
 class LineChart {
 
   constructor(element, options) {
+    const defaults = {
+      width : 500,
+      height: 370,
+      margin: {
+        top   : 15,
+        right : 0,
+        bottom: 35,
+        left  : 60
+      },
+      axis: true,
+      axisPadding: 5,
+      xTicks: 5,
+      yTicks: 3,
+      lineCurve: curveBasis
+    };
+
     Object.assign(this, defaults, options);
 
     this.element = element;
