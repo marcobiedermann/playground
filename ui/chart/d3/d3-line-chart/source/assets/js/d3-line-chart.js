@@ -1,4 +1,9 @@
-import * as d3 from 'd3';
+import { extent } from 'd3-array';
+import { axisBottom, axisLeft } from 'd3-axis';
+import { scaleLinear, scaleTime } from 'd3-scale';
+import { select } from 'd3-selection';
+import { curveBasis, line } from 'd3-shape';
+import { transition } from 'd3-transition';
 
 const defaults = {
   width : 500,
@@ -13,7 +18,7 @@ const defaults = {
   axisPadding: 5,
   xTicks: 5,
   yTicks: 3,
-  lineCurve: d3.curveBasis
+  lineCurve: curveBasis
 };
 
 class LineChart {
@@ -32,24 +37,24 @@ class LineChart {
     const { margin } = this;
     const [ innerWidth, innerHeight ] = this.dimensions();
 
-    const svg = this.svg = d3.select(this.element)
+    const svg = this.svg = select(this.element)
       .append('svg')
         .attr('width', this.width)
         .attr('height', this.height)
       .append('g')
         .attr('transform', `translate(${margin.left}, ${margin.top})`)
 
-    const scaleX = this.scaleX = d3.scaleTime()
+    const scaleX = this.scaleX = scaleTime()
       .range([0, innerWidth]);
 
-    const scaleY = this.scaleY = d3.scaleLinear()
+    const scaleY = this.scaleY = scaleLinear()
       .range([innerHeight, 0]);
 
-    const xAxis = this.xAxis = d3.axisBottom(scaleX)
+    const xAxis = this.xAxis = axisBottom(scaleX)
       .ticks(this.xTicks)
       .tickPadding(8);
 
-    const yAxis = this.yAxis = d3.axisLeft(scaleY)
+    const yAxis = this.yAxis = axisLeft(scaleY)
       .ticks(this.yTicks)
       .tickPadding(8);
 
@@ -69,7 +74,7 @@ class LineChart {
       .append('path')
         .attr('class', 'chart__line')
 
-    this.line = d3.line()
+    this.line = line()
       .curve(this.lineCurve)
       .x(data => scaleX(data.date))
       .y(data => scaleY(data.value));
@@ -107,8 +112,8 @@ class LineChart {
   }
 
   render(data, options = {}) {
-    this.scaleX.domain(d3.extent(data, data => data.date));
-    this.scaleY.domain(d3.extent(data, data => data.value));
+    this.scaleX.domain(extent(data, data => data.date));
+    this.scaleY.domain(extent(data, data => data.value));
 
     if (this.axis) {
       this.renderAxis(data, options);
