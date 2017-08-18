@@ -5,29 +5,29 @@ import { scaleTime, scaleLinear } from 'd3-scale';
 import { select, selectAll } from 'd3-selection';
 import { transition } from 'd3-transition';
 
-const defaults = {
-  width : 500,
-  height: 300,
-  margin: {
-    top   : 15,
-    right : 0,
-    bottom: 35,
-    left  : 60
-  },
-  axis: true,
-  axisPadding: 5,
-  tickSize: 10,
-  barPadding: 10,
-  ease: easeLinear,
-  nice: true,
-  type: 'rounded',
-  mouseover: () => {},
-  mouseleave: () => {}
-};
-
 class BarChart {
 
   constructor (element, options) {
+    const defaults = {
+      width : 500,
+      height: 300,
+      margin: {
+        top   : 15,
+        right : 0,
+        bottom: 35,
+        left  : 60
+      },
+      axis: true,
+      axisPadding: 5,
+      tickSize: 10,
+      barPadding: 10,
+      ease: easeLinear,
+      nice: true,
+      type: 'rounded',
+      mouseover: () => {},
+      mouseleave: () => {}
+    };
+
     Object.assign(this, defaults, options);
 
     this.element = element;
