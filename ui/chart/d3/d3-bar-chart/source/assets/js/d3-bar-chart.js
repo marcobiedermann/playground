@@ -1,4 +1,9 @@
-import * as d3 from 'd3';
+import { extent, max } from 'd3-array';
+import { axisBottom, axisLeft } from 'd3-axis';
+import { easeLinear } from 'd3-ease';
+import { scaleTime, scaleLinear } from 'd3-scale';
+import { select, selectAll } from 'd3-selection';
+import { transition } from 'd3-transition';
 
 const defaults = {
   width : 500,
@@ -13,7 +18,7 @@ const defaults = {
   axisPadding: 5,
   tickSize: 10,
   barPadding: 10,
-  ease: d3.easeLinear,
+  ease: easeLinear,
   nice: true,
   type: 'rounded',
   mouseover: () => {},
@@ -45,7 +50,7 @@ class BarChart {
     const { margin, tickSize, axisPadding } = this;
     const [ innerWidth, innerHeight ] = this.dimensions();
 
-    this.graph = d3.select(this.element)
+    this.graph = select(this.element)
 
     const svg = this.svg = this.graph
       .append('svg')
@@ -54,20 +59,18 @@ class BarChart {
       .append('g')
         .attr('transform', `translate(${margin.left}, ${margin.top})`);
 
-    const scaleX = this.scaleX = d3
-      .scaleTime()
+    const scaleX = this.scaleX = scaleTime()
       .range([0, innerWidth]);
 
-    const scaleY = this.scaleY = d3
-      .scaleLinear()
+    const scaleY = this.scaleY = scaleLinear()
       .range([innerHeight, 0]);
 
-    const xAxis = this.xAxis = d3.axisBottom(scaleX)
+    const xAxis = this.xAxis = axisBottom(scaleX)
       .ticks(5)
       .tickPadding(8)
       .tickSize(tickSize);
 
-    const yAxis = this.yAxis = d3.axisLeft(scaleY)
+    const yAxis = this.yAxis = axisLeft(scaleY)
       .ticks(3)
       .tickPadding(8)
       .tickSize(tickSize);
@@ -150,8 +153,8 @@ class BarChart {
 
   render(data, options = {}) {
     const { scaleX, scaleY } = this;
-    const domainX = scaleX.domain(d3.extent(data, data => data.date));
-    const domainY = scaleY.domain([0, d3.max(data, data => data.value)]);
+    const domainX = scaleX.domain(extent(data, data => data.date));
+    const domainY = scaleY.domain([0, max(data, data => data.value)]);
 
     if (this.nice) {
       domainX.nice();
