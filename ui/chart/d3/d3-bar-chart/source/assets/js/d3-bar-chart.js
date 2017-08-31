@@ -7,7 +7,7 @@ import { transition } from 'd3-transition';
 
 class BarChart {
 
-  constructor (element, options) {
+  constructor (element, options, data) {
     const defaults = {
       width : 500,
       height: 300,
@@ -31,6 +31,8 @@ class BarChart {
     Object.assign(this, defaults, options);
 
     this.element = element;
+    this.data = data;
+
     this.init();
 
     this.onResize = this.onResize.bind(this);
@@ -88,7 +90,7 @@ class BarChart {
         .call(yAxis);
   }
 
-  renderAxis(data, options) {
+  renderAxis(data = this.data, options) {
     let { svg } = this;
 
     svg = options.animate ? svg.transition() : svg;
@@ -102,7 +104,7 @@ class BarChart {
       .call(this.yAxis);
   }
 
-  renderBars(data, options) {
+  renderBars(data = this.data, options) {
     const { svg, scaleX, scaleY, barPadding, type, ease } = this;
     const [ innerWidth, innerHeight ] = this.dimensions();
     const barWidth = innerWidth / data.length - barPadding;
@@ -151,7 +153,7 @@ class BarChart {
       .remove();
   }
 
-  render(data, options = {}) {
+  render(data = this.data, options = {}) {
     const { scaleX, scaleY } = this;
     const domainX = scaleX.domain(extent(data, data => data.date));
     const domainY = scaleY.domain([0, max(data, data => data.value)]);
@@ -168,7 +170,7 @@ class BarChart {
     this.renderBars(data, options);
   }
 
-  update(data, options) {
+  update(data = this.data, options) {
     this.render(data, {
       animate: true
     });
