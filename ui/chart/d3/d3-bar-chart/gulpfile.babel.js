@@ -3,6 +3,7 @@ import browserify        from 'browserify';
 import gulp              from 'gulp';
 import gulpCleanCss      from 'gulp-clean-css';
 import gulpHtmlmin       from 'gulp-htmlmin';
+import gulpJsonminify    from 'gulp-jsonminify';
 import gulpPostcss       from 'gulp-postcss';
 import gulpSourcemaps    from 'gulp-sourcemaps';
 import gulpUglify        from 'gulp-uglify';
@@ -72,17 +73,26 @@ gulp.task('html', () => {
 
 gulp.task('js', () => {
   const b = browserify({
+    debug: true,
     entries: `${dirs.source}/assets/js/script.js`,
-    transform: [babelify]
+    transform: [
+      babelify
+    ]
   });
 
   return b.bundle()
     .pipe(vinylSourceStream('script.js'))
     .pipe(vinylBuffer())
-    .pipe(gulpSourcemaps.init())
+    .pipe(gulpSourcemaps.init({ loadMaps: true }))
     .pipe(gulpUglify())
     .pipe(gulpSourcemaps.write('.'))
     .pipe(gulp.dest(`${dirs.dest}/assets/js`));
+});
+
+gulp.task('json', () => {
+  return gulp.src(`${dirs.source}/**/*.json`)
+    .pipe(gulpJsonminify())
+    .pipe(gulp.dest(`${dirs.dest}`));
 });
 
 gulp.task('lint:css', () => {
@@ -96,6 +106,7 @@ gulp.task('watch', () => {
   gulp.watch(`${dirs.source}/**/*.html`, ['html']);
   gulp.watch(`${dirs.source}/assets/css/**/*.css`, ['lint:css', 'css']);
   gulp.watch(`${dirs.source}/assets/js/**/*.js`, ['js']);
+  gulp.watch(`${dirs.source}/**/*.json`, ['json']);
 });
 
 gulp.task('default', [
@@ -103,6 +114,7 @@ gulp.task('default', [
   'css',
   'html',
   'js',
+  'json',
   'watch'
 ]);
 
@@ -114,5 +126,6 @@ gulp.task('build', [
   'lint',
   'css',
   'html',
-  'js'
+  'js',
+  'json'
 ]);

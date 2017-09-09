@@ -1,6 +1,5 @@
 import babelify          from 'babelify';
 import browserify        from 'browserify';
-import deamdify          from 'deamdify';
 import gulp              from 'gulp';
 import gulpCleanCss      from 'gulp-clean-css';
 import gulpHtmlmin       from 'gulp-htmlmin';
@@ -80,15 +79,17 @@ gulp.task('lint:css', () => {
 
 gulp.task('js', () => {
   const b = browserify({
+    debug: true,
     entries: `${dirs.source}/assets/js/script.js`,
-    globalTransform: [deamdify],
-    transform: [babelify]
+    transform: [
+      babelify
+    ]
   });
 
   return b.bundle()
     .pipe(vinylSourceStream('script.js'))
     .pipe(vinylBuffer())
-    .pipe(gulpSourcemaps.init())
+    .pipe(gulpSourcemaps.init({ loadMaps: true }))
     .pipe(gulpUglify())
     .pipe(gulpSourcemaps.write('.'))
     .pipe(gulp.dest(`${dirs.dest}/assets/js`));
