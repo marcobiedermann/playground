@@ -25,6 +25,8 @@ html {
 body {
   background-color: var(--bodyBackgroundColor);
   color: var(--bodyColor);
+  display: flex;
+  flex-direction: column;
   font-family: var(--bodyFontFamily), var(--bodyFontFamilyFallback);
   font-size: var(--bodyFontSize);
   font-weight: var(--bodyFontWeight);
