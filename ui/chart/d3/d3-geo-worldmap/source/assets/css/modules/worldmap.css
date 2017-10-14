@@ -1,0 +1,13 @@
+.country {
+  
+}
+
+.state {
+  stroke: #34495d;
+  stroke-width: 2;
+  fill: #ee7738;
+}
+
+.marker {
+  fill: #e91e63;
+}
