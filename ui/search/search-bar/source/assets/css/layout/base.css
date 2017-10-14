@@ -30,5 +30,5 @@ body {
   font-weight: var(--bodyFontWeight);
   line-height: var(--bodyLineHeight);
   margin: 0;
-  min-height: 100%;
+  min-height: 100vh;
 }
