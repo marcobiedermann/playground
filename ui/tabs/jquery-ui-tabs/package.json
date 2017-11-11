@@ -3,31 +3,41 @@
   "version": "1.0.0",
   "description": "",
   "scripts": {
-    "build": "gulp build",
-    "start": "gulp",
-    "test": "gulp lint"
+    "client:dev": "webpack-dev-server",
+    "client:prod": "webpack -p",
+    "start": "npm run client:prod",
+    "lint:css": "stylelint ./source/assets/css/**/*.css",
+    "lint:js": "eslint ./source/assets/js/**/*.js",
+    "lint": "npm run lint:css && npm run lint:js",
+    "test": "npm run lint"
   },
   "author": "Marco Biedermann",
   "license": "ISC",
   "devDependencies": {
-    "babel-preset-env": "^1.6.0",
-    "babel-register": "^6.24.1",
-    "babelify": "^7.3.0",
-    "browserify": "^14.4.0",
-    "gulp": "^3.9.1",
-    "gulp-clean-css": "^3.7.0",
-    "gulp-htmlmin": "^3.0.0",
-    "gulp-postcss": "^7.0.0",
-    "gulp-sourcemaps": "^2.6.0",
-    "gulp-uglify": "^3.0.0",
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.2",
+    "babel-preset-env": "^1.6.1",
+    "css-loader": "^0.28.7",
+    "eslint": "^4.11.0",
+    "eslint-config-airbnb": "^16.1.0",
+    "eslint-plugin-import": "^2.8.0",
+    "eslint-plugin-jsx-a11y": "^6.0.2",
+    "eslint-plugin-react": "^7.4.0",
+    "extract-text-webpack-plugin": "^3.0.2",
+    "html-webpack-plugin": "^2.30.1",
     "postcss-cssnext": "^3.0.2",
     "postcss-import": "^10.0.0",
-    "stylelint": "^8.0.0",
-    "vinyl-buffer": "^1.0.0",
-    "vinyl-source-stream": "^1.1.0"
+    "postcss-loader": "^2.0.8",
+    "style-loader": "^0.19.0",
+    "stylelint": "^8.2.0",
+    "stylelint-config-standard": "^17.0.0",
+    "stylelint-order": "^0.7.0",
+    "uglifyjs-webpack-plugin": "^1.0.1",
+    "webpack": "^3.8.1",
+    "webpack-dev-server": "^2.9.4"
   },
   "dependencies": {
     "jquery": "^3.2.1",
-    "jquery-ui-browserify": "^1.11.0-pre-seelio"
+    "jquery-ui": "^1.12.1"
   }
 }

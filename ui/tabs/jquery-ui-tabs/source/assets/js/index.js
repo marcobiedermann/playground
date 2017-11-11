@@ -1,5 +1,5 @@
-import jQuery from 'jquery';
-import 'jquery-ui-browserify';
+import $ from 'jquery';
+import 'jquery-ui/ui/widgets/tabs';
 
 $('.js-ui-tabs').tabs({
   activate: (event, ui) => {
@@ -7,5 +7,5 @@ $('.js-ui-tabs').tabs({
   },
   select: (event, ui) => {
     window.location.hash = ui.tab.hash;
-  }
+  },
 });

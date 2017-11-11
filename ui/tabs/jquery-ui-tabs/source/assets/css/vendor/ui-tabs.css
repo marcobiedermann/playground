@@ -1,14 +1,10 @@
 :root {
   --tabsMarginBottom: 1.5rem;
-
   --tabsNavColor: #222;
-
   --tabsAnchorFontWeight: 700;
   --tabsAnchorPaddingHorizontal: 1rem;
   --tabsAnchorPaddingVertical: 0.5rem;
-
   --tabsAnchorActiveColor: #dd0423;
-
   --tabsPanelBackgroundColor: #fff;
   --tabsPanelPadding: 1rem;
 }
@@ -20,8 +16,7 @@
 .ui-tabs-nav {
   color: var(--tabsNavColor);
   display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
+  flex-flow: column wrap;
   list-style: none;
   margin: 0;
   padding: 0;
@@ -29,11 +24,9 @@
 }
 
 @media (min-width: 30em) {
-
   .ui-tabs-nav {
     flex-direction: row;
   }
-
 }
 
 .ui-tabs-anchor {
