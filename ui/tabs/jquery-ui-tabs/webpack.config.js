@@ -12,8 +12,8 @@ module.exports = {
   },
   entry: {
     main: [
-      path.resolve(__dirname, 'source/assets/js/index'),
-      path.resolve(__dirname, 'source/assets/css/style.css'),
+      path.resolve(__dirname, 'source/assets/js/main'),
+      path.resolve(__dirname, 'source/assets/css/main.css'),
     ],
   },
   output: {
@@ -96,6 +96,7 @@ module.exports = {
         trimCustomFragments: true,
         useShortDoctype: true,
       },
+      inject: false,
       template: 'source/index.html',
     }),
     new UglifyJSPlugin({
