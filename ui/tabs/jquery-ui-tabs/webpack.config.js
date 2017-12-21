@@ -108,9 +108,5 @@ module.exports = {
       },
     }),
     new webpack.HotModuleReplacementPlugin(),
-    new webpack.ProvidePlugin({
-      'window.$': 'jquery',
-      'window.jQuery': 'jquery',
-    }),
   ],
 };
