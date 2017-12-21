@@ -1,14 +1,14 @@
 import {
-  select, 
-  selectAll
+  select,
+  selectAll,
 } from 'd3-selection';
 import {
   geoAlbersUsa,
   geoMercator,
-  geoPath
+  geoPath,
 } from 'd3-geo';
 import {
-  feature
+  feature,
 } from 'topojson-client';
 
 class WorldMap {
@@ -16,7 +16,7 @@ class WorldMap {
     const defaults = {
       width: 1200,
       height: 780,
-      scale: 100
+      scale: 100,
     };
 
     Object.assign(this, options, defaults);
@@ -26,15 +26,17 @@ class WorldMap {
   }
 
   init() {
-    const { element, width, height, scale } = this;
+    const {
+      element, width, height, scale,
+    } = this;
     const svg = this.svg = select(element)
       .append('svg')
-        .attr('width', width)
-        .attr('height', height);
-    
+      .attr('width', width)
+      .attr('height', height);
+
     svg.append('g')
       .attr('class', 'countries');
-    
+
     this.projection = geoMercator()
       .scale(scale)
       .translate([width / 2, height / 2]);
@@ -45,14 +47,14 @@ class WorldMap {
 
     const country = svg.selectAll('.country')
       .data(data);
-    
+
     const length = data.length;
-    
+
     country.enter()
       .append('path')
-        .attr('class', 'country')
-        .attr('d', data => geoPath().projection(projection)(data))
-        .attr('fill', (data, index) => `rgba(38, 50, 56, ${1 / length * index})`);
+      .attr('class', 'country')
+      .attr('d', data => geoPath().projection(projection)(data))
+      .attr('fill', (data, index) => `rgba(38, 50, 56, ${1 / length * index})`);
   }
 
   renderStates(data) {
@@ -65,8 +67,8 @@ class WorldMap {
       .data(data)
       .enter()
       .append('path')
-        .attr('class', 'state')
-        .attr('d', data => geoPath().projection(projection)(data));
+      .attr('class', 'state')
+      .attr('d', data => geoPath().projection(projection)(data));
   }
 
   renderMarkers(data) {
@@ -77,16 +79,16 @@ class WorldMap {
 
     marker.enter()
       .append('circle')
-        .attr('class', 'marker')
-        .attr('cx', data => projection(data.coordinates)[0])
-        .attr('cy', data => projection(data.coordinates)[1])
-        .attr('r', data => data.population / 3000000);
+      .attr('class', 'marker')
+      .attr('cx', data => projection(data.coordinates)[0])
+      .attr('cy', data => projection(data.coordinates)[1])
+      .attr('r', data => data.population / 3000000);
   }
 
   render(data) {
     console.log(data);
     data = feature(data, data.objects.countries).features;
-    
+
     this.renderCountries(data);
     // this.renderMarkers(worldData);
   }

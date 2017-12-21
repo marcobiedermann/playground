@@ -1,4 +1,4 @@
-import Bricks       from 'bricks.js';
+import Bricks from 'bricks.js';
 import imagesLoaded from 'imagesloaded';
 
 imagesLoaded('.js-images-loaded', () => {
@@ -9,18 +9,18 @@ imagesLoaded('.js-images-loaded', () => {
     sizes: [
       {
         columns: 2,
-        gutter: 10
+        gutter: 10,
       },
       {
         columns: 3,
         gutter: 10,
-        mq: '480px'
+        mq: '480px',
       },
       {
         columns: 4,
         gutter: 10,
-        mq: '768px'
-      }
-    ]
+        mq: '768px',
+      },
+    ],
   }).resize(true);
 });

@@ -1,13 +1,13 @@
 import imagesLoaded from 'imagesloaded';
-import Isotope      from 'isotope-layout';
+import Isotope from 'isotope-layout';
 
 imagesLoaded('.js-isotope', () => {
   let filterValue = localStorage.getItem('isotope-filter');
-  let sortValue   = localStorage.getItem('isotope-sort');
-  let sortData = {};
+  let sortValue = localStorage.getItem('isotope-sort');
+  const sortData = {};
 
   const isotopeFilterButtons = Array.from(document.querySelectorAll('.js-isotope-filter-button'));
-  const itotopeSortButtons   = Array.from(document.querySelectorAll('.js-isotope-sort-button'));
+  const itotopeSortButtons = Array.from(document.querySelectorAll('.js-isotope-sort-button'));
 
   function isotopeFilter() {
     isotopeFilterButtons.forEach(isotopeFilterButton => isotopeFilterButton.classList.remove('is-active'));
@@ -17,7 +17,7 @@ imagesLoaded('.js-isotope', () => {
     localStorage.setItem('isotope-filter', filterValue);
 
     isotope.arrange({
-      filter: filterValue
+      filter: filterValue,
     });
   }
 
@@ -29,11 +29,11 @@ imagesLoaded('.js-isotope', () => {
     localStorage.setItem('isotope-sort', sortValue);
 
     isotope.arrange({
-      sortBy: sortValue
+      sortBy: sortValue,
     });
   }
 
-  isotopeFilterButtons.forEach(isotopeFilterButton => {
+  isotopeFilterButtons.forEach((isotopeFilterButton) => {
     if (filterValue) {
       isotopeFilterButton.classList.remove('is-active');
     }
@@ -41,11 +41,11 @@ imagesLoaded('.js-isotope', () => {
     isotopeFilterButton.addEventListener('click', isotopeFilter);
   });
 
-  itotopeSortButtons.forEach(isotopeSortButton => {
+  itotopeSortButtons.forEach((isotopeSortButton) => {
     const isotopeSortButtonData = isotopeSortButton.getAttribute('data-sort');
 
     if (sortValue) {
-      isotopeSortButton.classList.remove('is-active')
+      isotopeSortButton.classList.remove('is-active');
     }
 
     sortData[isotopeSortButtonData] = `.${isotopeSortButtonData}`;
@@ -61,10 +61,9 @@ imagesLoaded('.js-isotope', () => {
   }
 
   const isotope = new Isotope(document.querySelector('.js-isotope-layout'), {
-    filter      : filterValue,
-    getSortData : sortData,
+    filter: filterValue,
+    getSortData: sortData,
     itemSelector: '.js-isotope-item',
-    sortBy      : sortValue
+    sortBy: sortValue,
   });
-
 });

@@ -16,18 +16,18 @@ $uiAccordion.accordion({
   },
 
   create: (event, ui) => {
-    const $this            = $(event.target);
+    const $this = $(event.target);
     const $activeAccordion = $(window.location.hash);
 
     if ($this.find($activeAccordion).length) {
       $this.accordion('option', 'active', $this.find($this.accordion('option', 'header')).index($activeAccordion));
     }
-  }
+  },
 });
 
-$(window).on('hashchange', event => {
+$(window).on('hashchange', (event) => {
   const $activeAccordion = $(window.location.hash);
-  const $parentAccordion = $activeAccordion.parents('.js-ui-accordion')
+  const $parentAccordion = $activeAccordion.parents('.js-ui-accordion');
 
   if ($activeAccordion.length) {
     $parentAccordion.accordion('option', 'active', $parentAccordion.find($uiAccordion.accordion('option', 'header')).index($activeAccordion));

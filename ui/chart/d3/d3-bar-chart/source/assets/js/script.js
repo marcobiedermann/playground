@@ -1,4 +1,4 @@
-import BarChart     from './d3-bar-chart';
+import BarChart from './d3-bar-chart';
 import generateData from './generate-data';
 
 const barChart = new BarChart('.js-bar-chart', {}, generateData(24));

@@ -1,11 +1,11 @@
 import getDistance from './get-distance';
-import Node        from './node';
+import Node from './node';
 
 class Nodes {
   constructor(options) {
     const defaults = {
       length: 150,
-      maxDistance: 200
+      maxDistance: 200,
     };
 
     Object.assign(this, options, defaults);
@@ -21,13 +21,15 @@ class Nodes {
     for (let i = 0; i < length; i++) {
       this.nodes.push(new Node({
         x: Math.random() * width,
-        y: Math.random() * height
+        y: Math.random() * height,
       }));
     }
   }
 
   render(context) {
-    const { length, nodes, maxDistance, width, height } = this;
+    const {
+      length, nodes, maxDistance, width, height,
+    } = this;
 
     for (let i = 0; i < length; i++) {
       this.nodes[i].update(context, width, height);
@@ -47,13 +49,9 @@ class Nodes {
           context.lineTo(nodeB.x, nodeB.y);
           context.stroke();
         }
-
       }
-
     }
-
   }
-
 }
 
 export default Nodes;

@@ -1,11 +1,10 @@
 import * as THREE from 'three';
 
 class Smoke {
-
   constructor(element, options) {
     const defaults = {
       width: window.innerWidth,
-      height: window.innerHeight
+      height: window.innerHeight,
     };
 
     this.element = element;
@@ -23,7 +22,7 @@ class Smoke {
     this.clock = new THREE.Clock();
 
     const renderer = this.renderer = new THREE.WebGLRenderer({
-      canvas: element
+      canvas: element,
     });
 
     renderer.setSize(width, height);
@@ -33,7 +32,7 @@ class Smoke {
     const meshGeometry = new THREE.CubeGeometry(200, 200, 200);
     const meshMaterial = new THREE.MeshLambertMaterial({
       color: 0xaa6666,
-      wireframe: false
+      wireframe: false,
     });
     this.mesh = new THREE.Mesh(meshGeometry, meshMaterial);
 
@@ -50,7 +49,7 @@ class Smoke {
 
     let smokeParticlesLength = smokeParticles.length;
 
-    while(smokeParticlesLength--) {
+    while (smokeParticlesLength--) {
       smokeParticles[smokeParticlesLength].rotation.z += delta * 0.2;
     }
   }
@@ -76,11 +75,11 @@ class Smoke {
     const textureLoader = new THREE.TextureLoader();
     const smokeParticles = this.smokeParticles = [];
 
-    textureLoader.load('assets/images/clouds.png', texture => {
+    textureLoader.load('assets/images/clouds.png', (texture) => {
       const smokeMaterial = new THREE.MeshLambertMaterial({
         color: 0xffffff,
         map: texture,
-        transparent: true
+        transparent: true,
       });
       smokeMaterial.map.minFilter = THREE.LinearFilter;
       const smokeGeometry = new THREE.PlaneBufferGeometry(300, 300);
@@ -88,7 +87,7 @@ class Smoke {
       const smokeMeshes = [];
       let limit = 150;
 
-      while(limit--) {
+      while (limit--) {
         smokeMeshes[limit] = new THREE.Mesh(smokeGeometry, smokeMaterial);
         smokeMeshes[limit].position.set(Math.random() * 500 - 250, Math.random() * 500 - 250, Math.random() * 1000 - 100);
         smokeMeshes[limit].rotation.z = Math.random() * 360;
@@ -103,13 +102,13 @@ class Smoke {
     const textureLoader = new THREE.TextureLoader();
     const textGeometry = new THREE.PlaneBufferGeometry(600, 320);
 
-    textureLoader.load('assets/images/background.jpg', texture => {
+    textureLoader.load('assets/images/background.jpg', (texture) => {
       const textMaterial = new THREE.MeshLambertMaterial({
         blending: THREE.AdditiveBlending,
         color: 0xffffff,
         map: texture,
         opacity: 1,
-        transparent: true
+        transparent: true,
       });
       textMaterial.map.minFilter = THREE.LinearFilter;
       const text = new THREE.Mesh(textGeometry, textMaterial);
@@ -142,7 +141,7 @@ class Smoke {
   onResize() {
     const { camera } = this;
 
-    const windowWidth  = window.innerWidth;
+    const windowWidth = window.innerWidth;
     const windowHeight = window.innerHeight;
 
     camera.aspect = windowWidth / windowHeight;
@@ -154,7 +153,6 @@ class Smoke {
   addEventListeners() {
     window.addEventListener('resize', this.onResize);
   }
-
 }
 
 export default Smoke;

@@ -1,13 +1,12 @@
 class Rose {
-
   constructor(element, options) {
-    const canvas  = this.canvas = element;
+    const canvas = this.canvas = element;
     const context = this.context = canvas.getContext('2d');
     const defaults = {
       n: 5,
       d: 8,
       amplitude: 200,
-      nodes: 100
+      nodes: 100,
     };
 
     this.options = Object.assign(this, defaults, options);
@@ -19,7 +18,9 @@ class Rose {
 
   render() {
     const { context } = this;
-    const { n, d, amplitude, nodes } = this.options;
+    const {
+      n, d, amplitude, nodes,
+    } = this.options;
     const k = n / d;
 
     context.beginPath();
@@ -40,7 +41,7 @@ class Rose {
 
     context.clearRect(width / -2, height / -2, width, height);
 
-    this.render()
+    this.render();
 
     requestAnimationFrame(() => this.update());
   }
@@ -48,7 +49,7 @@ class Rose {
   setSize() {
     const { canvas } = this;
 
-    const width  = this.width  = canvas.width  = window.innerWidth;
+    const width = this.width = canvas.width = window.innerWidth;
     const height = this.height = canvas.height = window.innerHeight;
 
     this.context.translate(width / 2, height / 2);
@@ -61,7 +62,6 @@ class Rose {
   addEventListeners() {
     window.addEventListener('resize', () => this.onResize());
   }
-
 }
 
 export default Rose;

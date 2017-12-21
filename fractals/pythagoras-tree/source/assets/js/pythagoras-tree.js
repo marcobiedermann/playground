@@ -1,14 +1,13 @@
 import degreesToRadians from './degrees-to-radians';
 
 const defaults = {
-  width : window.innerWidth,
+  width: window.innerWidth,
   height: window.innerHeight,
   size: 100,
-  limit: 10
+  limit: 10,
 };
 
 class PythagorasTree {
-
   constructor(element, options) {
     Object.assign(this, defaults, options);
 
@@ -19,10 +18,10 @@ class PythagorasTree {
   }
 
   init() {
-    const canvas  = this.canvas   = document.querySelector(this.element);
-    const context = this.context  = this.canvas.getContext('2d');
-    const width   = canvas.width  = this.width;
-    const height  = canvas.height = this.height;
+    const canvas = this.canvas = document.querySelector(this.element);
+    const context = this.context = this.canvas.getContext('2d');
+    const width = canvas.width = this.width;
+    const height = canvas.height = this.height;
   }
 
   pythagorasTree(size, limit) {
@@ -51,11 +50,12 @@ class PythagorasTree {
 
       context.restore();
     }
-
   }
 
   render(opitons) {
-    const { width, height, context, size, limit } = this;
+    const {
+      width, height, context, size, limit,
+    } = this;
 
     context.fillRect(width / 2 - size / 2, height / 2 - size / 2, size, size);
     context.translate(width / 2 - size / 2, height / 2 - size / 2);
@@ -63,7 +63,6 @@ class PythagorasTree {
 
     this.pythagorasTree(size, limit);
   }
-
 }
 
 export default PythagorasTree;

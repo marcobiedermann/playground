@@ -9,7 +9,7 @@ const rules = [
     d: 0.85,
     tx: 0,
     ty: 1.6,
-    weight: 0.65
+    weight: 0.65,
   },
   {
     a: -0.15,
@@ -18,7 +18,7 @@ const rules = [
     d: 0.24,
     tx: 0,
     ty: 0.44,
-    weight: 0.07
+    weight: 0.07,
   },
   {
     a: 0.2,
@@ -27,7 +27,7 @@ const rules = [
     d: 0.22,
     tx: 0,
     ty: 1.6,
-    weight: 0.07
+    weight: 0.07,
   },
   {
     a: 0,
@@ -36,10 +36,10 @@ const rules = [
     d: 0.16,
     tx: 0,
     ty: 0,
-    weight: 0.21
-  }
+    weight: 0.21,
+  },
 ];
 
 new BarnsleyFern('.canvas', {
-  rules: rules
+  rules,
 });

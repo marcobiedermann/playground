@@ -4,7 +4,7 @@ class NodeGarden {
   constructor(element, options) {
     const defaults = {
       width: window.innerWidth,
-      height: window.innerHeight
+      height: window.innerHeight,
     };
 
     Object.assign(this, options, defaults);
@@ -15,20 +15,20 @@ class NodeGarden {
   }
 
   init() {
-    const canvas  = document.querySelector(this.element);
+    const canvas = document.querySelector(this.element);
     this.context = canvas.getContext('2d');
 
-    const width  = canvas.width  = this.width;
+    const width = canvas.width = this.width;
     const height = canvas.height = this.height;
 
     this.nodes = new Nodes({
       width,
-      height
+      height,
     });
   }
 
   render(context) {
-    this.nodes.render(context)
+    this.nodes.render(context);
   }
 
   update() {
@@ -39,7 +39,6 @@ class NodeGarden {
 
     requestAnimationFrame(this.update.bind(this));
   }
-
 }
 
 export default NodeGarden;

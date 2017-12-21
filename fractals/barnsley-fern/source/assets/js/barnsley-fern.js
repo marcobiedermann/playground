@@ -1,12 +1,11 @@
 const defaults = {
-  width  : window.innerWidth,
-  height : window.innerHeight,
-  scale  : 75,
-  opacity: 0.5
+  width: window.innerWidth,
+  height: window.innerHeight,
+  scale: 75,
+  opacity: 0.5,
 };
 
 class BarnsleyFern {
-
   constructor(element, options) {
     Object.assign(this, defaults, options);
 
@@ -17,10 +16,10 @@ class BarnsleyFern {
   }
 
   init() {
-    const canvas  = this.canvas   = document.querySelector(this.element);
-    const context = this.context  = this.canvas.getContext('2d');
-    const width   = canvas.width  = this.width;
-    const height  = canvas.height = this.height;
+    const canvas = this.canvas = document.querySelector(this.element);
+    const context = this.context = this.canvas.getContext('2d');
+    const width = canvas.width = this.width;
+    const height = canvas.height = this.height;
 
     context.translate(width / 2, height);
   }
@@ -38,7 +37,6 @@ class BarnsleyFern {
 
       random -= rule.weight;
     }
-
   }
 
   render(options) {
@@ -58,14 +56,12 @@ class BarnsleyFern {
 
       this.context.fillRect(x * scale, -y * scale, opacity, opacity);
     }
-
   }
 
   update(options) {
-    this.render(options)
+    this.render(options);
     requestAnimationFrame(this.update.bind(this));
   }
-
 }
 
 export default BarnsleyFern;

@@ -13,13 +13,12 @@ const defaults = {
     'input[type="time"]',
     'input[type="url"]',
     'select',
-    'textarea'
+    'textarea',
   ],
-  localStorageKey: 'js-form-storage'
+  localStorageKey: 'js-form-storage',
 };
 
 class FormStorage {
-
   constructor(element, options) {
     Object.assign(this, defaults, options);
     this.element = element;
@@ -35,11 +34,11 @@ class FormStorage {
     const formStorageKey = window.localStorage.getItem(`${this.localStorageKey}-${element.name}`);
 
     if (formStorageKey) {
-      JSON.parse(formStorageKey).forEach(field => {
+      JSON.parse(formStorageKey).forEach((field) => {
         const input = element.querySelector(field.id);
 
         input.checked = field.checked;
-        input.value   = field.value;
+        input.value = field.value;
       });
     }
   }
@@ -48,13 +47,13 @@ class FormStorage {
     const { element } = this;
     const form = [];
 
-    Array.from(element.querySelectorAll(this.formElements.join(', '))).forEach(input => {
+    Array.from(element.querySelectorAll(this.formElements.join(', '))).forEach((input) => {
       form.push({
-        id     : `#${input.id}`,
+        id: `#${input.id}`,
         checked: input.checked,
-        value  : input.value
+        value: input.value,
       });
-    })
+    });
 
     window.localStorage.setItem(`${this.localStorageKey}-${element.name}`, JSON.stringify(form));
   }
@@ -66,7 +65,6 @@ class FormStorage {
   addEventListeners() {
     this.element.addEventListener('submit', this.onSubmit);
   }
-
 }
 
 export default FormStorage;

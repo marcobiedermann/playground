@@ -1,5 +1,4 @@
 class GoogleMaps {
-
   constructor(element, options) {
     this.element = element;
 
@@ -16,7 +15,7 @@ class GoogleMaps {
   renderMap(options) {
     this.map.setCenter({
       lat: options.lat,
-      lng: options.lng
+      lng: options.lng,
     });
   }
 
@@ -24,7 +23,7 @@ class GoogleMaps {
     const { map } = this;
     const infoWindow = new google.maps.InfoWindow();
 
-    this.markers = locations.map(location => {
+    this.markers = locations.map((location) => {
       const marker = new google.maps.Marker(location);
 
       if (location.infoWindow) {
@@ -59,7 +58,6 @@ class GoogleMaps {
   addEventListeners() {
     window.addEventListener('resize', this.onResize);
   }
-
 }
 
 export default GoogleMaps;

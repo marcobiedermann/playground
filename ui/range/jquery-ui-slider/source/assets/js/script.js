@@ -14,7 +14,7 @@ $uiSlider.slider({
   slide: (event, ui) => {
     $priceMin.val(ui.values[0]);
     $priceMax.val(ui.values[1]);
-  }
+  },
 });
 
 $priceMin.val($uiSlider.slider('values', 0));

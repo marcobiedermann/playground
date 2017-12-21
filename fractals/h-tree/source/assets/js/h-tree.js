@@ -1,15 +1,14 @@
 import degreesToRadians from './degrees-to-radians';
 
 const defaults = {
-  width : window.innerWidth,
+  width: window.innerWidth,
   height: window.innerHeight,
   direction: -90,
   angle: 20,
-  limit: 10
+  limit: 10,
 };
 
 class HTree {
-
   constructor(element, options) {
     Object.assign(this, defaults, options);
 
@@ -20,10 +19,10 @@ class HTree {
   }
 
   init() {
-    const canvas  = this.canvas   = document.querySelector(this.element);
-    const context = this.context  = this.canvas.getContext('2d');
-    const width   = canvas.width  = this.width;
-    const height  = canvas.height = this.height;
+    const canvas = this.canvas = document.querySelector(this.element);
+    const context = this.context = this.canvas.getContext('2d');
+    const width = canvas.width = this.width;
+    const height = canvas.height = this.height;
 
     context.translate(width / 2, height / 2);
   }
@@ -35,7 +34,7 @@ class HTree {
 
     context.beginPath();
 
-    while(pointsLength--) {
+    while (pointsLength--) {
       context.lineTo(points[pointsLength].x, points[pointsLength].y);
     }
 
@@ -44,25 +43,23 @@ class HTree {
 
 
   hTree(p0, angle, limit) {
-
     if (limit > 0) {
       const pA = {
         x: p0.x + (Math.cos(degreesToRadians(angle)) * limit * 8),
-        y: p0.y + (Math.sin(degreesToRadians(angle)) * limit * 8)
+        y: p0.y + (Math.sin(degreesToRadians(angle)) * limit * 8),
       };
 
       this.drawPath([p0, pA]);
       this.hTree(pA, angle - this.angle, limit - 1);
       this.hTree(pA, angle + this.angle, limit - 1);
     }
-
   }
 
   render(options) {
     const { context } = this;
     const p0 = {
       x: 0,
-      y: 250
+      y: 250,
     };
 
     context.beginPath();
@@ -72,7 +69,6 @@ class HTree {
     context.closePath();
     context.stroke();
   }
-
 }
 
 export default HTree;

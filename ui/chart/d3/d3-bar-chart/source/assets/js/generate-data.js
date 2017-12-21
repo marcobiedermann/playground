@@ -6,7 +6,7 @@ function generateData(n) {
   while (n--) {
     data.push({
       date: new Date(Date.now() - (n * 1000 * 60 * 60 * 24)),
-      value: randomInteger(0, 12)
+      value: randomInteger(0, 12),
     });
   }
 

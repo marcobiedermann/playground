@@ -6,16 +6,15 @@ import { select, selectAll } from 'd3-selection';
 import { transition } from 'd3-transition';
 
 class BarChart {
-
-  constructor (element, options, data) {
+  constructor(element, options, data) {
     const defaults = {
-      width : 500,
+      width: 500,
       height: 300,
       margin: {
-        top   : 15,
-        right : 0,
+        top: 15,
+        right: 0,
         bottom: 35,
-        left  : 60
+        left: 60,
       },
       axis: true,
       axisPadding: 5,
@@ -25,7 +24,7 @@ class BarChart {
       nice: true,
       type: 'rounded',
       mouseover: () => {},
-      mouseleave: () => {}
+      mouseleave: () => {},
     };
 
     Object.assign(this, defaults, options);
@@ -44,22 +43,22 @@ class BarChart {
 
     return [
       this.width - margin.left - margin.right,
-      this.height - margin.top - margin.bottom
+      this.height - margin.top - margin.bottom,
     ];
   }
 
   init() {
     const { margin, tickSize, axisPadding } = this;
-    const [ innerWidth, innerHeight ] = this.dimensions();
+    const [innerWidth, innerHeight] = this.dimensions();
 
-    this.graph = select(this.element)
+    this.graph = select(this.element);
 
     const svg = this.svg = this.graph
       .append('svg')
-        .attr('width', this.width)
-        .attr('height', this.height)
+      .attr('width', this.width)
+      .attr('height', this.height)
       .append('g')
-        .attr('transform', `translate(${margin.left}, ${margin.top})`);
+      .attr('transform', `translate(${margin.left}, ${margin.top})`);
 
     const scaleX = this.scaleX = scaleTime()
       .range([0, innerWidth]);
@@ -79,15 +78,15 @@ class BarChart {
 
     svg
       .append('g')
-        .attr('class', 'chart__axis chart__axis--x')
-        .attr('transform', `translate(0, ${innerHeight + axisPadding})`)
-        .call(xAxis);
+      .attr('class', 'chart__axis chart__axis--x')
+      .attr('transform', `translate(0, ${innerHeight + axisPadding})`)
+      .call(xAxis);
 
     svg
       .append('g')
-        .attr('class', 'chart__axis chart__axis--y')
-        .attr('transform', `translate(${-axisPadding}, 0)`)
-        .call(yAxis);
+      .attr('class', 'chart__axis chart__axis--y')
+      .attr('transform', `translate(${-axisPadding}, 0)`)
+      .call(yAxis);
   }
 
   renderAxis(data = this.data, options) {
@@ -105,8 +104,10 @@ class BarChart {
   }
 
   renderBars(data = this.data, options) {
-    const { svg, scaleX, scaleY, barPadding, type, ease } = this;
-    const [ innerWidth, innerHeight ] = this.dimensions();
+    const {
+      svg, scaleX, scaleY, barPadding, type, ease,
+    } = this;
+    const [innerWidth, innerHeight] = this.dimensions();
     const barWidth = innerWidth / data.length - barPadding;
 
     const column = svg
@@ -116,7 +117,7 @@ class BarChart {
     column
       .enter()
       .append('rect')
-        .attr('class', 'chart__column');
+      .attr('class', 'chart__column');
 
     (options.animate ? svg.selectAll('.chart__column').transition().ease(ease) : svg.selectAll('.chart__column'))
       .attr('x', data => scaleX(data.date) - barWidth / 2)
@@ -136,7 +137,7 @@ class BarChart {
     bar
       .enter()
       .append('rect')
-        .attr('class', 'chart__bar');
+      .attr('class', 'chart__bar');
 
     (options.animate ? svg.selectAll('.chart__bar').transition().ease(ease) : svg.selectAll('.chart__bar'))
       .attr('x', data => scaleX(data.date) - barWidth / 2)
@@ -172,7 +173,7 @@ class BarChart {
 
   update(data = this.data, options) {
     this.render(data, {
-      animate: true
+      animate: true,
     });
   }
 
@@ -183,7 +184,6 @@ class BarChart {
   addEventListeners() {
     window.addEventListener('resize', this.onResize);
   }
-
 }
 
 export default BarChart;
