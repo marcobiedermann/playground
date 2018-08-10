@@ -14,13 +14,13 @@
     "babel-register": "^6.24.1",
     "gulp": "^3.9.1",
     "gulp-clean-css": "^3.7.0",
-    "gulp-htmlmin": "^3.0.0",
-    "gulp-imagemin": "^3.3.0",
-    "gulp-postcss": "^7.0.0",
+    "gulp-htmlmin": "^4.0.0",
+    "gulp-imagemin": "^4.1.0",
+    "gulp-postcss": "^8.0.0",
     "gulp-sourcemaps": "^2.6.0",
-    "gulp-webp": "^2.3.0",
+    "gulp-webp": "^3.0.0",
     "postcss-cssnext": "^3.0.2",
-    "postcss-import": "^10.0.0",
-    "stylelint": "^8.0.0"
+    "postcss-import": "^12.0.0",
+    "stylelint": "^9.4.0"
   }
 }
