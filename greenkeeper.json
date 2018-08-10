@@ -1,0 +1,48 @@
+{
+  "groups": {
+    "default": {
+      "packages": [
+        "canvas/heart-curve/package.json",
+        "canvas/node-garden/package.json",
+        "canvas/rose/package.json",
+        "daily-ui/day-001-sign-up/package.json",
+        "fractals/barnsley-fern/package.json",
+        "fractals/h-tree/package.json",
+        "fractals/koch-snowflake/package.json",
+        "fractals/pythagoras-tree/package.json",
+        "fractals/sierpinski-carpet/package.json",
+        "fractals/sierpinski-triangle/package.json",
+        "package.json",
+        "three.js/smoke-particles/package.json",
+        "ui/404/404/package.json",
+        "ui/accordion/jquery-ui-accordion/package.json",
+        "ui/button/buttons/package.json",
+        "ui/chart/d3/d3-bar-chart/package.json",
+        "ui/chart/d3/d3-geo-worldmap/package.json",
+        "ui/chart/d3/d3-line-chart/package.json",
+        "ui/datepicker/jquery-ui-datepicker/package.json",
+        "ui/disclaimer/cookie-disclaimer/package.json",
+        "ui/editor/pell/package.json",
+        "ui/form/form-storage/package.json",
+        "ui/image/grayscale/package.json",
+        "ui/layout/bricks.js/package.json",
+        "ui/layout/isotope-layout/package.json",
+        "ui/layout/masonry-layout/package.json",
+        "ui/lazy-loading/lazysizes/package.json",
+        "ui/loading/barba.js/package.json",
+        "ui/login/login/package.json",
+        "ui/map/google-maps/google-maps-marker/package.json",
+        "ui/navigation/navigation-icons/package.json",
+        "ui/navigation/navigation/package.json",
+        "ui/progress/nanobar/package.json",
+        "ui/progress/nprogress/package.json",
+        "ui/progress/pace/package.json",
+        "ui/range/jquery-ui-slider/package.json",
+        "ui/range/noUiSlider/package.json",
+        "ui/search/search-bar/package.json",
+        "ui/search/simple-search-bar/package.json",
+        "ui/tabs/jquery-ui-tabs/package.json"
+      ]
+    }
+  }
+}
