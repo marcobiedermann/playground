@@ -37,6 +37,12 @@
     "lazysizes": "^3.0.0",
     "masonry-layout": "^4.2.0",
     "svg4everybody": "^2.1.8",
-    "three": "^0.86.0"
-  }
+    "three": "^0.86.0",
+    "snyk": "^1.83.0"
+  },
+  "scripts": {
+    "snyk-protect": "snyk protect",
+    "prepare": "npm run snyk-protect"
+  },
+  "snyk": true
 }
